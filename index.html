@@ -1,9 +1,10 @@
 <!DOCTYPE html>
+<!-- Curso Gemini Notebook para docentes de primaria · Versión 11 · noviembre de 2026 -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Tema 1: Inicio · Curso Gemini Notebook para docentes de primaria</title>
+<title>Curso Gemini Notebook para docentes de primaria</title>
 <meta name="description" content="Lecciones paso a paso para empezar a usar Gemini Notebook: entrar, crear tu cuaderno, agregar la planeación, usar el chat, informes, mapa mental, tabla de datos y compartir.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -239,6 +240,80 @@ html:not(.js) nav.navega{display:none}
 .fondo-drawer{display:none}
 footer{text-align:center;color:var(--suave);font-size:.85rem;padding:0 1rem 2.5rem}
 
+
+/* Contexto: ¿qué es y para qué sirve? */
+.ctx{border-top:6px solid var(--morado)}
+.ctx-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:.9rem}
+.ctx-bloque{background:var(--fondo);border:1px solid var(--borde);border-radius:18px;padding:1rem 1.1rem}
+html.contraste .ctx-bloque{border:2px solid #fff}
+.ctx-bloque p{margin:.2rem 0 0}
+.ctx-eti{display:inline-block;font-family:var(--titulos);font-weight:700;font-size:.82rem;padding:.1rem .7rem;border-radius:99px;background:var(--morado);color:#fff;margin-bottom:.35rem}
+html.contraste .ctx-eti{color:#000}
+.ctx-lista{margin:.2rem 0 0;padding-left:1.2rem}
+.ctx-lista li{margin:.3rem 0}
+.ctx-ejemplo{margin-top:.9rem;background:var(--acento-suave);border:2px dashed var(--acento);border-radius:18px;padding:1rem 1.1rem}
+.ctx-ejemplo .ctx-eti{background:#B7791F}
+html.contraste .ctx-ejemplo .ctx-eti{background:#FFE600}
+.ctx-ejemplo p{margin:.2rem 0 0}
+.mapa-txt{display:flex;flex-direction:column}
+.mapa-obj{font-weight:400;font-size:.8rem;color:var(--suave);margin-top:.15rem}
+
+/* Grupos de temas en el menú lateral */
+.lista-lec li.grupo-tema{font-family:var(--titulos);font-weight:700;font-size:.78rem;text-transform:uppercase;letter-spacing:.04em;color:var(--suave);padding:.9rem .65rem .2rem}
+.lista-lec li.grupo-tema:first-child{padding-top:.1rem}
+/* Comparación de descripciones */
+.comparar{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:.8rem;margin-top:.9rem}
+.comp{border-radius:18px;padding:.9rem 1.1rem;border:2px solid}
+.comp p{margin:.3rem 0 0}
+.comp-mal{background:var(--rojo-suave);border-color:var(--rojo)}
+.comp-bien{background:var(--verde-suave);border-color:var(--verde)}
+.comp-eti{font-family:var(--titulos);font-weight:700}
+.comp-mal .comp-eti{color:var(--rojo)} .comp-bien .comp-eti{color:var(--verde)}
+.comp-nota{font-size:.88rem;color:var(--suave)}
+
+/* Acerca del curso */
+.acerca{border-top:6px solid var(--azul)}
+.obj-general{background:linear-gradient(135deg,rgba(31,79,209,.08),rgba(109,63,217,.10));border:2px solid var(--azul);border-radius:18px;padding:1rem 1.2rem}
+html.contraste .obj-general{background:#000;border-color:#FFE600}
+.obj-general p{margin:.3rem 0 0;font-size:1.05rem}
+.obj-temas{margin:.3rem 0 0;padding-left:1.4rem}
+.obj-temas li{margin:.45rem 0}
+/* Parte especial: la planeación */
+.planeacion{position:relative;border:3px solid var(--acento);background:linear-gradient(180deg,var(--acento-suave),var(--tarjeta) 45%)}
+html.contraste .planeacion{background:#000}
+.plan-sello{position:absolute;top:-14px;right:1.2rem;background:var(--acento);color:#000;font-weight:700;font-size:.8rem;padding:.15rem .8rem;border-radius:99px;border:2px solid #000}
+.plan-intro{font-size:1.08rem;margin:.2rem 0 .9rem}
+.plan-ficha{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:.6rem;margin-bottom:.9rem}
+.plan-ficha div{background:var(--tarjeta);border:1px solid var(--borde);border-radius:14px;padding:.6rem .8rem}
+html.contraste .plan-ficha div{border:2px solid #fff}
+.plan-ficha span{display:block;font-size:.78rem;color:var(--suave);font-weight:700;text-transform:uppercase;letter-spacing:.03em}
+.plan-ficha strong{display:block;font-family:var(--titulos);font-size:1rem}
+.planeacion .ctx-grid{grid-template-columns:repeat(auto-fit,minmax(220px,1fr))}
+/* Glosario */
+details.extra{margin:1rem 0 0;border:2px dashed var(--borde);border-radius:18px;background:var(--fondo)}
+details.extra summary{cursor:pointer;min-height:56px;display:flex;flex-wrap:wrap;align-items:center;gap:.4rem .7rem;padding:.7rem 1rem;list-style:none;font-weight:700}
+details.extra summary::-webkit-details-marker{display:none}
+details.extra summary::before{content:"＋";font-weight:800;color:var(--azul);font-size:1.2rem}
+details.extra[open] summary::before{content:"－"}
+details.extra summary:focus-visible{outline:3px solid var(--azul);outline-offset:3px;border-radius:16px}
+.extra-eti{font-size:.78em;font-weight:800;text-transform:uppercase;letter-spacing:.03em;background:var(--acento-suave);color:var(--texto);border:1px solid var(--acento);border-radius:999px;padding:.15rem .6rem}
+.extra-tit{flex:1 1 14rem}
+.extra-dur{font-size:.85em;font-weight:700;color:var(--suave);white-space:nowrap}
+.extra-cuerpo{padding:0 1rem 1rem}
+.extra-cuerpo > p{margin:.2rem 0 .8rem}
+.video.vertical{aspect-ratio:9/16;max-width:340px;margin:0 auto}
+.extra-cuerpo .video + .video, .extra-cuerpo .extra-fuente + .video{margin-top:1rem}
+.extra-cuerpo h4{font-family:var(--titulos);margin:1rem 0 .5rem;font-size:1.05em}
+.extra-fuente{font-size:.88em;color:var(--suave);margin:.6rem 0 0;line-height:1.5}
+.extra-fuente a{font-weight:700}
+details.glosario summary{cursor:pointer;min-height:52px;display:flex;align-items:center;gap:.5rem;font-weight:700;padding:.5rem 1rem;border:2px solid var(--borde);border-radius:14px;background:var(--fondo);list-style:none}
+details.glosario summary::-webkit-details-marker{display:none}
+details.glosario summary::before{content:"＋";font-weight:700;color:var(--azul)}
+details.glosario[open] summary::before{content:"－"}
+details.glosario dl{margin:.8rem 0 0;display:grid;gap:.5rem}
+details.glosario dt{font-family:var(--titulos);font-weight:700;margin-top:.3rem}
+details.glosario dd{margin:0 0 .3rem;padding-left:.9rem;border-left:4px solid var(--acento)}
+.version{font-weight:700}
 @media (max-width:980px){
   .layout{grid-template-columns:1fr}
   #btn-lecciones{display:inline-flex}
@@ -308,7 +383,7 @@ try{
     </button>
     <a class="logo" href="#inicio">
       <span class="logo-icono" aria-hidden="true"><svg style="color:#fff"><use href="#i-libro"/></svg></span>
-      <span><strong>Curso Gemini Notebook</strong><small>Tema 1 · Inicio · Docentes de primaria</small></span>
+      <span><strong>Curso Gemini Notebook</strong><small id="sub-tema">Tema 1 · Inicio · Docentes de primaria</small></span>
     </a>
     <button type="button" class="btn-top principal" id="btn-acc" aria-expanded="false" aria-controls="panel-acc">
       <svg aria-hidden="true"><use href="#i-acc"/></svg><span>Accesibilidad</span>
@@ -360,10 +435,10 @@ try{
 <div class="layout">
   <aside class="lateral" id="lateral" aria-label="Lecciones del tema">
     <div class="avance">
-      <div class="anillo" id="anillo" aria-hidden="true"><span id="anillo-txt">0/8</span></div>
+      <div class="anillo" id="anillo" aria-hidden="true"><span id="anillo-txt">0</span></div>
       <div>
-        <strong>Tu avance</strong>
-        <small id="texto-progreso">0 de 8 lecciones terminadas</small>
+        <strong>Tu avance en el curso</strong>
+        <small id="texto-progreso">Lecciones terminadas</small>
       </div>
     </div>
     <nav aria-label="Lecciones">
@@ -374,13 +449,13 @@ try{
 <main id="contenido" tabindex="-1">
 
 <!-- ===================== PORTADA ===================== -->
-<section class="leccion" id="inicio" data-titulo="Inicio del tema" data-corto="Inicio" aria-labelledby="t-inicio">
+<section class="leccion" id="inicio" data-tema="1" data-tipo="portada" data-titulo="Tema 1: Inicio" data-corto="Inicio del Tema 1" aria-labelledby="t-inicio">
   <div class="hero" style="--c1:#1F4FD1;--c2:#6D3FD9">
     <span class="pre"><svg aria-hidden="true" width="18" height="18"><use href="#i-libro"/></svg>Tema 1 · Inicio</span>
     <h2 id="t-inicio" tabindex="-1">Primeros pasos con Gemini Notebook</h2>
     <p>¡Bienvenida y bienvenido! En este tema vas a conocer <strong>Gemini Notebook</strong>, una herramienta gratuita de Google con inteligencia artificial. Aprenderás a entrar, crear tu cuaderno, agregar una planeación y crear tus primeros productos.</p>
     <div class="acciones">
-      <a class="btn-h" href="#leccion-1"><svg aria-hidden="true"><use href="#i-play"/></svg>Empezar la Lección 1</a>
+      <a class="btn-h" href="#inicio-1"><svg aria-hidden="true"><use href="#i-play"/></svg>Empezar la Lección 1</a>
     </div>
     <div class="datos">
       <div class="dato"><strong>8 lecciones</strong><span>cortas y paso a paso</span></div>
@@ -388,6 +463,80 @@ try{
       <div class="dato"><strong>1 actividad</strong><span>para entregar en Classroom</span></div>
     </div>
   </div>
+
+  <div class="tarjeta acerca">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-estrella"/></svg></span>Acerca del curso</h3>
+    <div class="obj-general">
+      <span class="ctx-eti">Objetivo general del curso</span>
+      <p>Que los docentes de primaria utilicen <strong>Gemini Notebook</strong> para organizar sus planeaciones y crear, a partir de ellas, recursos didácticos (resúmenes, esquemas, materiales para sus alumnos y recursos en audio y video) que les ayuden a <strong>ahorrar tiempo al preparar sus clases</strong>, revisando siempre la información que genera la inteligencia artificial.</p>
+    </div>
+    <div class="ctx-bloque" style="margin-top:.9rem">
+      <span class="ctx-eti">¿Por qué este curso?</span>
+      <p>Preparar materiales para cada clase toma mucho tiempo, casi siempre fuera del horario escolar. Las herramientas de inteligencia artificial pueden ayudar, pero muchos docentes no las usan porque no han tenido la oportunidad de aprenderlas con calma o no saben si son confiables. Este curso te acompaña paso a paso con una herramienta gratuita que <strong>trabaja solo con tus propios documentos</strong>, para que la uses con confianza en tu trabajo diario.</p>
+      <details class="extra">
+        <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">Maestras y maestros cuentan cómo les ayuda la IA</span><span class="extra-dur">2:11 min</span></summary>
+        <div class="extra-cuerpo">
+        <p>Docentes de <strong>Prepa en Línea-SEP</strong> comparten, en sus propias palabras, cómo la inteligencia artificial les ayuda a crear materiales, planear, dar retroalimentación y apoyar a alumnos con discapacidad (por ejemplo, con lectura en voz alta).</p>
+        <div class="video vertical" data-yt="2dsYw3rbeco" data-titulo="Video complementario: beneficios de la IA en la educación, Prepa en Línea-SEP"><a class="video-alt" href="https://www.youtube.com/shorts/2dsYw3rbeco" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Prepa en Línea-SEP. (2025). <em>Beneficios de la IA en la educación (parte 1)</em> [Video]. YouTube. <a href="https://www.youtube.com/shorts/2dsYw3rbeco" target="_blank" rel="noopener">Ver en YouTube ↗</a> · Video corto completo</p>
+        </div>
+      </details>
+      <details class="extra">
+        <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">Más que usar la IA: saber pedir, evaluar y decidir</span><span class="extra-dur">40 s</span></summary>
+        <div class="extra-cuerpo">
+        <p>Graciela Cappelletti, especialista en formación docente, explica que lo que devuelve la IA depende de <strong>lo que tú le pidas</strong>, y que el verdadero reto es formar <strong>criterio</strong> para evaluar el resultado y decidir qué usar. Es justo lo que practicarás en este curso.</p>
+        <div class="video vertical" data-yt="P-L0thnQGoU" data-titulo="Video complementario: formar criterio docente frente a la IA, Graciela Cappelletti"><a class="video-alt" href="https://www.youtube.com/shorts/P-L0thnQGoU" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Grupo Magro Editores. (2026). <em>Inteligencia artificial en educación: formar criterio docente</em> | Graciela Cappelletti [Video]. YouTube. <a href="https://www.youtube.com/shorts/P-L0thnQGoU" target="_blank" rel="noopener">Ver en YouTube ↗</a> · Video corto completo</p>
+        </div>
+      </details>
+    </div>
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Objetivos de cada tema</h3>
+    <ol class="obj-temas">
+      <li><strong>Tema 1 · Inicio.</strong> Organizar una planeación en Gemini Notebook y crear con ella un informe, un mapa mental y una tabla de datos.</li>
+      <li><strong>Tema 2 · Desarrollo.</strong> Crear materiales para los alumnos (tarjetas didácticas, cuestionario, infografía y presentación) y revisarlos antes de usarlos en clase.</li>
+      <li><strong>Tema 3 · Cierre.</strong> Crear resúmenes en audio y en video para repasar los temas y compartirlos.</li>
+      <li><strong>Evidencia final.</strong> Aplicar lo aprendido con una planeación propia, de tu grado y tu materia.</li>
+    </ol>
+  </div>
+
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-corazon"/></svg></span>La IA y tú: un equipo</h3>
+    <p style="margin:0 0 .9rem">La inteligencia artificial <strong>no viene a reemplazarte</strong>. Es una ayudante que hace en minutos las tareas que te quitan tiempo, para que tú te enfoques en lo que nadie más puede hacer: <strong>conocer y acompañar a tus alumnos</strong>.</p>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">La IA te ayuda a…</span><ul class="ctx-lista"><li>Resumir y organizar documentos largos.</li><li>Preparar borradores de materiales: tarjetas, cuestionarios, esquemas.</li><li>Ahorrar tiempo fuera del horario escolar.</li></ul></div>
+      <div class="ctx-bloque"><span class="ctx-eti">Tú sigues siendo quien…</span><ul class="ctx-lista"><li>Decide qué necesita tu grupo.</li><li>Revisa y corrige lo que crea la IA.</li><li>Guía, motiva y acompaña a tus alumnos.</li></ul></div>
+    </div>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Cuida los datos de tus alumnos</strong><p>No subas a la herramienta nombres completos, calificaciones ni información personal de tus alumnos o sus familias. Trabaja con planeaciones y materiales de clase.</p></div></div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">¿Por qué la IA a veces inventa cosas?</span><span class="extra-dur">1:04 min</span></summary>
+      <div class="extra-cuerpo">
+        <p>Un video animado de una serie para maestros de México. Con el ejemplo de una IA que recomienda un libro que <strong>no existe</strong>, explica qué es una «alucinación» y por qué <strong>nunca debes usar un dato sin verificarlo</strong>. Usa ejemplos con otros chats de IA; Gemini Notebook reduce este problema porque trabaja con tus fuentes, pero no lo elimina.</p>
+        <div class="video vertical" data-yt="eURl2eh4M2Q" data-titulo="Video complementario: por qué la IA inventa cosas, Saga IA para maestros"><a class="video-alt" href="https://www.youtube.com/shorts/eURl2eh4M2Q" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Profe Dorian. (2026). <em>¿Por qué la IA inventa cosas? Saga IA para maestros, episodio 5</em> [Video]. YouTube. <a href="https://www.youtube.com/shorts/eURl2eh4M2Q" target="_blank" rel="noopener">Ver en YouTube ↗</a> · Video corto completo</p>
+      </div>
+    </details>
+
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">¿Cuál es el papel del docente frente a la IA?</span><span class="extra-dur">4:55 min</span></summary>
+      <div class="extra-cuerpo">
+        <p>Un video corto sobre cómo cambia el rol del maestro: de transmitir información a <strong>guiar, acompañar y orientar</strong>, con los retos y oportunidades de la IA. Al final verás la marca «NotebookLM»: el video se hizo con la función <strong>Resumen en video</strong>, la misma que aprenderás en el Tema 3.</p>
+        <div class="video" data-yt="XQNrxjraBiI" data-titulo="Video complementario: el rol del docente frente a la IA"><a class="video-alt" href="https://www.youtube.com/watch?v=XQNrxjraBiI" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Pedagogía 360. (2026). <em>El rol del docente frente al uso de la IA en el aula</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=XQNrxjraBiI" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · Video completo</p>
+      </div>
+    </details>
+
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">La historia de Carla: una maestra sin tiempo</span><span class="extra-dur">1:31 min</span></summary>
+      <div class="extra-cuerpo">
+        <p>En esta charla TEDx, la ponente cuenta el caso de una maestra que pasaba tardes y fines de semana calificando y preparando clases, y cómo un asistente de IA le devolvió tiempo para lo importante. La charla es de 2023 y habla de otras herramientas, pero la idea es la misma de este curso.</p>
+        <div class="video" data-inicio="159" data-fin="250" data-yt="MZhKDt86PX8" data-titulo="Video complementario: fragmento de la charla IA en educación, del miedo a la oportunidad"><a class="video-alt" href="https://www.youtube.com/watch?v=MZhKDt86PX8&amp;t=159s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> TEDx Talks. (2023). <em>IA en educación: Del miedo a la oportunidad</em> | María Agustina Ibáñez | TEDxUTNCórdoba [Video]. YouTube. <a href="https://www.youtube.com/watch?v=MZhKDt86PX8" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 2:39 al 4:10</p>
+      </div>
+    </details>
+  </div>
+
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Objetivo del tema:</strong> que uses Gemini Notebook para organizar una planeación y crear, a partir de ella, tres recursos que te ayuden a preparar tus clases: un informe, un mapa mental y una tabla de datos.</p></div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Antes de empezar necesitas</h3>
@@ -397,14 +546,28 @@ try{
       <div class="nec"><span class="ico"><svg aria-hidden="true"><use href="#i-corazon"/></svg></span><div><strong>Ganas de aprender</strong><span>No necesitas saber de tecnología.</span></div></div>
     </div>
 
-    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>El material con el que vamos a practicar</h3>
-    <p style="margin:0">Usaremos como ejemplo una <strong>planeación de Matemáticas de 3er grado</strong> (semana 7: multiplicación y fracciones). Es solo para practicar: al final del curso harás lo mismo con <strong>una planeación tuya</strong>, de tu grado y tu materia.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Cómo usar esta página</h3>
+    <ul class="lista">
+      <li>Avanza con los botones <strong>Siguiente</strong> y <strong>Anterior</strong> que están al final de cada lección.</li>
+      <li>El menú <strong>Lecciones</strong> (en celular) o la columna de la izquierda (en computadora) te muestra todas las lecciones y tu avance.</li>
+      <li>Al terminar cada lección, marca <strong>«Ya terminé esta lección»</strong>.</li>
+      <li>Con el botón <span class="bn">Accesibilidad</span> puedes agrandar la letra, poner alto contraste o escuchar la lección en voz alta.</li>
+    </ul>
 
     <div class="aviso bien">
       <span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span>
       <div><strong class="t">¿Viste el nombre «NotebookLM» en algún lado?</strong>
       <p>Es la misma herramienta. Desde julio de 2026 se llama <strong>Gemini Notebook</strong>. Si en algún video o guía aparece el nombre anterior, no te preocupes.</p></div>
     </div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">¿Por qué cambió de nombre?</span><span class="extra-dur">21 s</span></summary>
+      <div class="extra-cuerpo">
+        <p>En unos segundos, un creador de contenido explica que la herramienta pasó de llamarse NotebookLM a Gemini Notebook, y que además ganó funciones nuevas.</p>
+        <div class="video" data-inicio="6" data-fin="27" data-yt="XtrZzfPwCyE" data-titulo="Video complementario: el cambio de nombre de NotebookLM a Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=XtrZzfPwCyE&amp;t=6s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Rivera, A. (2026). <em>Cómo usar Gemini Notebook de 0 a experto: la IA gratis que hace todo</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=XtrZzfPwCyE" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 0:06 al 0:27</p>
+      </div>
+    </details>
     <div class="aviso tip">
       <span class="ico"><svg aria-hidden="true"><use href="#i-acc"/></svg></span>
       <div><strong class="t">¿La letra se ve chica?</strong>
@@ -412,22 +575,73 @@ try{
     </div>
   </div>
 
+  <div class="tarjeta planeacion">
+    <span class="plan-sello">Material de práctica</span>
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>La planeación que usaremos en el curso</h3>
+    <p class="plan-intro">En este curso usaremos la <strong>planeación de Matemáticas de 3er grado</strong> que se encuentra en la página de <strong>Red Magisterial</strong>, y tomaremos la <strong>Sesión 1</strong> como ejemplo práctico.</p>
+    <div class="plan-ficha">
+      <div><span>Página</span><strong>Red Magisterial</strong></div>
+      <div><span>Grado y materia</span><strong>3er grado · Matemáticas</strong></div>
+      <div><span>Semana</span><strong>Bloque I, semana 7</strong></div>
+      <div><span>Ejemplo práctico</span><strong>Sesión 1: multiplicación</strong></div>
+    </div>
+    <p><a class="btn sec" href="https://www.redmagisterial.com/planeacionesnme/primaria/3-3er/36-matematicas/7" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-externo"/></svg>Ver la planeación en Red Magisterial</a></p>
+
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Por qué una planeación?</span><p>Es el documento con el que trabajas todos los días. Así practicas con algo real y conocido, no con un ejemplo inventado.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué la agregamos?</span><p>Le da a tu cuaderno el <strong>contexto base</strong>. Gemini Notebook solo usa las fuentes que tú le das, así que todo lo que pidas (respuestas, informes, tarjetas, cuestionarios…) saldrá de esta planeación.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Cómo la usarás?</span><p>La agregas una sola vez, en la <a href="#inicio-3">Lección 3 del Tema 1</a>, y a partir de ahí la usas en todas las lecciones para crear cada producto.</p></div>
+    </div>
+
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Nota</strong><p>Tú puedes cargar <strong>tu propia planeación</strong>. La que usamos es solo para fines de demostración. En la evidencia final del curso trabajarás con una planeación tuya.</p></div></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>Palabras que usaremos</h3>
+    <p style="margin:0 0 .6rem">Si encuentras una palabra que no conoces, búscala aquí.</p>
+    <details class="glosario">
+      <summary>Ver el glosario</summary>
+      <dl>
+        <dt>Gemini Notebook</dt><dd>Herramienta gratuita de Google con inteligencia artificial que trabaja con los materiales que tú le das. Antes se llamaba NotebookLM.</dd>
+        <dt>Inteligencia artificial (IA)</dt><dd>Programas que pueden leer, resumir y crear textos o imágenes. Ayudan mucho, pero pueden equivocarse, por eso siempre hay que revisar lo que generan.</dd>
+        <dt>Cuaderno</dt><dd>Espacio donde guardas las fuentes de un mismo tema y todo lo que la herramienta crea con ellas.</dd>
+        <dt>Fuente</dt><dd>Material que le das a la herramienta para que trabaje: una página web, un PDF, un documento o un video.</dd>
+        <dt>Planeación</dt><dd>En este curso, el documento de clase que usamos como fuente de práctica.</dd>
+        <dt>Chat</dt><dd>Parte central del cuaderno donde le haces preguntas a la herramienta sobre tus fuentes.</dd>
+        <dt>Cita</dt><dd>Número pequeño junto a una respuesta que muestra de qué parte de la fuente salió la información.</dd>
+        <dt>Studio</dt><dd>Panel de la derecha donde se crean los productos: informes, mapas mentales, tablas, tarjetas, cuestionarios, infografías, presentaciones, audio y video.</dd>
+        <dt>Enlace</dt><dd>Dirección de internet que abre una página o un archivo al darle clic. También se le dice «vínculo» o «link».</dd>
+        <dt>Compartir</dt><dd>Dar permiso a otras personas para ver lo que creaste, por medio de un enlace.</dd>
+        <dt>Google Classroom</dt><dd>Plataforma donde está organizado este curso y donde entregas tus actividades.</dd>
+      </dl>
+    </details>
+  </div>
+
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Lecciones de este tema</h3>
-    <ul class="mapa-lec" id="mapa-lec"></ul>
+    <ul class="mapa-lec" data-mapa-tema="1"></ul>
   </div>
 </section>
 
 <!-- ===================== LECCIÓN 1 ===================== -->
-<section class="leccion" id="leccion-1" data-titulo="Lección 1: Entra a Gemini Notebook" data-corto="Entra a Gemini Notebook" aria-labelledby="t-l1">
+<section class="leccion" id="inicio-1" data-tema="1" data-tipo="leccion" data-num="1" data-objetivo="Abrir Gemini Notebook con tu cuenta de Google." data-titulo="Tema 1 · Lección 1: Entra a Gemini Notebook" data-corto="Entra a Gemini Notebook" aria-labelledby="t-l1">
   <div class="hero" style="--c1:#1F4FD1;--c2:#2D7FF9">
-    <span class="pre">Lección 1 de 8</span>
+    <span class="pre">Tema 1 · Lección 1 de 8</span>
     <h2 id="t-l1" tabindex="-1">Entra a Gemini Notebook</h2>
     <p>Abre la herramienta con tu cuenta de Google.</p>
     <div class="acciones"><a class="btn-h" href="https://notebook.google.com/" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-externo"/></svg>Abrir Gemini Notebook</a></div>
     <span class="num-grande" aria-hidden="true">1</span>
   </div>
   <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> abrir Gemini Notebook con tu cuenta de Google.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p><strong>Gemini Notebook</strong> es un asistente de Google con inteligencia artificial que trabaja <strong>solo con los materiales que tú le das</strong>: planeaciones, lecturas, libros o páginas web. A diferencia de un buscador, no busca en todo internet: responde y crea a partir de tus documentos, y te muestra de dónde sacó cada dato.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Ahorrar tiempo al leer y organizar planeaciones o documentos largos.</li><li>Preparar materiales para tus alumnos (resúmenes, guías, esquemas, tablas) en pocos minutos.</li><li>Tener a la mano un apoyo que conoce tus materiales y responde tus dudas sobre ellos.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Es domingo por la noche y necesitas preparar la semana. En lugar de leer la planeación completa varias veces, la subes a Gemini Notebook y en minutos tienes un resumen, un esquema y una tabla de actividades para organizarte.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
@@ -461,18 +675,26 @@ try{
 </section>
 
 <!-- ===================== LECCIÓN 2 ===================== -->
-<section class="leccion" id="leccion-2" data-titulo="Lección 2: Crea tu cuaderno" data-corto="Crea tu cuaderno" aria-labelledby="t-l2">
+<section class="leccion" id="inicio-2" data-tema="1" data-tipo="leccion" data-num="2" data-objetivo="Crear tu primer cuaderno y ponerle nombre." data-titulo="Tema 1 · Lección 2: Crea tu cuaderno" data-corto="Crea tu cuaderno" aria-labelledby="t-l2">
   <div class="hero" style="--c1:#0E7490;--c2:#1F4FD1">
-    <span class="pre">Lección 2 de 8</span>
+    <span class="pre">Tema 1 · Lección 2 de 8</span>
     <h2 id="t-l2" tabindex="-1">Crea tu cuaderno</h2>
     <p>Un <strong>cuaderno</strong> es como una carpeta: ahí guardas tus materiales y todo lo que la herramienta crea con ellos.</p>
     <span class="num-grande" aria-hidden="true">2</span>
   </div>
   <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear tu primer cuaderno y ponerle nombre.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Un <strong>cuaderno</strong> es el espacio donde reúnes los materiales de <strong>un mismo tema o proyecto</strong>. Todo lo que la herramienta crea (respuestas, informes, mapas, tablas) se queda guardado dentro de ese cuaderno.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Mantener ordenados tus materiales por materia, grado, tema o proyecto.</li><li>Encontrar rápido lo que ya preparaste, sin buscar entre muchos archivos.</li><li>Volver a usar el mismo cuaderno cada vez que trabajes ese tema.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Puedes tener un cuaderno llamado «Matemáticas 3°: fracciones», otro «Proyecto de lectura» y otro «Consejo Técnico Escolar». Cuando vuelvas a ver fracciones, abres su cuaderno y ahí está todo lo que preparaste.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="geF8UN-v_vw" data-titulo="Video: cómo crear tu cuaderno en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=geF8UN-v_vw" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="rSse2jHxR5Y" data-titulo="Video: cómo crear tu cuaderno en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=rSse2jHxR5Y" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
@@ -482,6 +704,8 @@ try{
       <li><p>Da clic sobre <strong>«Cuaderno sin título»</strong>, arriba a la izquierda, y escribe un nombre fácil de reconocer. En el video usamos <strong>curso notebook</strong>.</p></li>
       <li><p>Presiona la tecla <strong>Enter</strong> o da clic fuera del nombre para guardarlo.</p></li>
     </ol>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Un buen nombre te ahorra tiempo</strong><p>Usa la materia, el grado y la semana, por ejemplo: <strong>Matemáticas 3° – Semana 7</strong>. Cuando tengas varios cuadernos, sabrás de inmediato cuál abrir.</p></div></div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>Conoce las tres partes de tu cuaderno</h3>
     <div class="paneles">
@@ -493,14 +717,30 @@ try{
 </section>
 
 <!-- ===================== LECCIÓN 3 ===================== -->
-<section class="leccion" id="leccion-3" data-titulo="Lección 3: Agrega la planeación" data-corto="Agrega la planeación" aria-labelledby="t-l3">
+<section class="leccion" id="inicio-3" data-tema="1" data-tipo="leccion" data-num="3" data-objetivo="Agregar fuentes a tu cuaderno, empezando por la planeación de práctica." data-titulo="Tema 1 · Lección 3: Agrega tus fuentes" data-corto="Agrega tus fuentes" aria-labelledby="t-l3">
   <div class="hero" style="--c1:#15803D;--c2:#0E7490">
-    <span class="pre">Lección 3 de 8</span>
-    <h2 id="t-l3" tabindex="-1">Agrega la planeación como fuente</h2>
+    <span class="pre">Tema 1 · Lección 3 de 8</span>
+    <h2 id="t-l3" tabindex="-1">Agrega tus fuentes</h2>
     <p>Gemini Notebook trabaja <strong>solo con los materiales que tú le das</strong>. A esos materiales se les llama <strong>fuentes</strong>.</p>
     <span class="num-grande" aria-hidden="true">3</span>
   </div>
-  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> poner la planeación de práctica dentro de tu cuaderno.</p></div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> agregar fuentes a tu cuaderno, empezando por la planeación de práctica.</p></div>
+  <div class="tarjeta planeacion">
+    <span class="plan-sello">Material de práctica</span>
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>La planeación que usaremos</h3>
+    <p class="plan-intro">En este curso usaremos la <strong>planeación de Matemáticas de 3er grado</strong> que se encuentra en la página de <strong>Red Magisterial</strong>, y tomaremos la <strong>Sesión 1</strong> como ejemplo práctico.</p>
+    <p><a class="btn sec" href="https://www.redmagisterial.com/planeacionesnme/primaria/3-3er/36-matematicas/7" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-externo"/></svg>Ver la planeación en Red Magisterial</a></p>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Nota</strong><p>Tú puedes cargar <strong>tu propia planeación</strong>. La que usamos es solo para fines de demostración.</p></div></div>
+  </div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Las <strong>fuentes</strong> son los materiales que le das a la herramienta para que trabaje: páginas web, archivos PDF, documentos de Google, videos de YouTube o texto que pegues. Gemini Notebook <strong>solo usa esas fuentes</strong> para responder y crear.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Que las respuestas se basen en <strong>tu</strong> planeación o en el libro que usas, no en información general de internet.</li><li>Reunir en un solo lugar varios materiales de un mismo tema.</li><li>Revisar la información con confianza, porque sabes de dónde viene.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Agregas como fuentes la planeación de la semana y la lección del libro de texto. Después, todo lo que le preguntes o le pidas crear saldrá de esos dos materiales, con el lenguaje y los temas que ya trabajas con tu grupo.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-copiar"/></svg></span>Primero, copia el enlace de la planeación</h3>
@@ -511,37 +751,53 @@ try{
     <p class="estado-copia" role="status" aria-live="polite"></p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="3jSkjvPy7A0" data-titulo="Video: cómo agregar y buscar fuentes en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=3jSkjvPy7A0" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="S6QOUvQ69IY" data-titulo="Video: cómo agregar y buscar fuentes en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=S6QOUvQ69IY" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
-      <li><p>En el panel de <strong>Fuentes</strong> (izquierda), da clic en <span class="bn">+ Fuentes</span>.</p></li>
-      <li><p>Elige la opción para agregar un <strong>sitio web</strong> y <strong>pega el enlace</strong> de la planeación (clic derecho → Pegar, o las teclas <strong>Ctrl + V</strong>).</p></li>
+      <li><p>En el panel de <strong>Fuentes</strong> (izquierda), da clic en <span class="bn">+ Fuentes</span>. Se abre una ventana con varias opciones: <strong>Subir archivos, Sitios web, Play Libros, Drive, Libros de texto</strong> y <strong>Texto copiado</strong>.</p></li>
+      <li><p>Elige <span class="bn">Sitios web</span> y <strong>pega el enlace</strong> de la planeación (clic derecho → Pegar, o las teclas <strong>Ctrl + V</strong>).</p></li>
       <li><p>Da clic en el botón para <strong>insertar o agregar</strong> la fuente.</p></li>
       <li><p>Espera unos segundos. Funcionó si ves <strong>«Red Magisterial | Planeaciones…»</strong> en el panel de Fuentes y un <strong>resumen</strong> de la planeación en el centro.</p></li>
     </ol>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿Usas el libro de texto?</strong><p>En esa misma ventana aparece la opción <strong>Libros de texto</strong>. Cuando termines el curso, explórala: puede servirte para tener tu libro junto a la planeación en el mismo cuaderno.</p></div></div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>También puedes buscar fuentes en internet</h3>
-    <p style="margin:0">En el recuadro <strong>«Buscar nuevas fuentes en la Web»</strong> escribes un tema y la herramienta te propone páginas. Con <span class="bn">Importar</span> las agregas y con <span class="bn">Eliminar</span> las descartas.</p>
+    <p style="margin:0">Al inicio del video verás esta opción. Así funciona:</p>
+    <ol class="pasos">
+      <li><p>En el recuadro <strong>«Buscar nuevas fuentes en la Web»</strong> escribe un tema, por ejemplo <em>educación en México</em>, y da clic en la flecha ➜.</p></li>
+      <li><p>Espera a que diga <strong>«Fast Research completada»</strong>. Verás una lista de páginas encontradas.</p></li>
+      <li><p>Puedes abrir cada página para <strong>revisar si es confiable</strong> antes de usarla (en el video se abren algunas como ejemplo).</p></li>
+      <li><p>Marca las casillas de las que te sirvan y da clic en <span class="bn">Importar</span>, o descártalas con <span class="bn">Eliminar</span>.</p></li>
+    </ol>
     <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
-      <div><strong class="t">Importante para este curso</strong><p>Deja <strong>solo la planeación</strong> como fuente. Si agregaste otras, elimínalas o quítales la palomita. Así tus resultados se parecerán a los de los videos.</p></div></div>
+      <div><strong class="t">Importante para este curso</strong><p>La búsqueda en internet es solo para que la conozcas: en el video <strong>no se importa ninguna</strong> de esas páginas. No necesitas descargar nada. Deja <strong>solo la planeación</strong> como fuente; si agregaste otras, elimínalas o quítales la palomita. Así tus resultados se parecerán a los de los videos.</p></div></div>
   </div>
 </section>
 
 <!-- ===================== LECCIÓN 4 ===================== -->
-<section class="leccion" id="leccion-4" data-titulo="Lección 4: Conversa con el chat" data-corto="Conversa con el chat" aria-labelledby="t-l4">
+<section class="leccion" id="inicio-4" data-tema="1" data-tipo="leccion" data-num="4" data-objetivo="Hacer preguntas sobre la planeación y revisar de dónde sale cada respuesta." data-titulo="Tema 1 · Lección 4: Conversa con el chat" data-corto="Conversa con el chat" aria-labelledby="t-l4">
   <div class="hero" style="--c1:#6D3FD9;--c2:#1F4FD1">
-    <span class="pre">Lección 4 de 8</span>
+    <span class="pre">Tema 1 · Lección 4 de 8</span>
     <h2 id="t-l4" tabindex="-1">Conversa con el chat</h2>
     <p>Hazle preguntas a la herramienta y te responde usando la planeación.</p>
     <span class="num-grande" aria-hidden="true">4</span>
   </div>
   <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> hacerle preguntas sobre la planeación y revisar de dónde sale cada respuesta.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>El <strong>chat</strong> es como platicar con un asistente que ya leyó tus fuentes. Le escribes una pregunta con tus propias palabras y te responde con base en tus materiales, señalando de qué parte salió la información.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Encontrar rápido un dato sin leer todo el documento.</li><li>Pedir ideas: actividades, preguntas para tus alumnos o formas de evaluar.</li><li>Aclarar dudas sobre una planeación antes de dar la clase.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Antes de la clase, le preguntas: «¿Qué materiales necesito para la Sesión 1?» o «¿Qué preguntas puedo hacer al inicio para saber qué saben mis alumnos de multiplicación?». En segundos tienes la respuesta, con la parte de la planeación de donde salió.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="cQhtbzmxZJg" data-titulo="Video: cómo usar el chat de Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=cQhtbzmxZJg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="TXuBQh1LYyw" data-titulo="Video: cómo usar el chat de Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=TXuBQh1LYyw" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
@@ -549,42 +805,64 @@ try{
       <li><p>Abajo, en el centro, está el recuadro <strong>«Haz una pregunta o crea algo»</strong>. Da clic ahí.</p></li>
       <li><p>Escribe tu pregunta, por ejemplo: <strong>resumen de la información</strong>.</p></li>
       <li><p>Presiona <strong>Enter</strong> o da clic en la flecha ➜ para enviarla.</p></li>
-      <li><p>Espera mientras aparece <strong>«Respondiendo…»</strong> y lee la respuesta.</p></li>
+      <li><p>Espera mientras aparece <strong>«Buscando en tus fuentes…»</strong> y luego <strong>«Respondiendo…»</strong>. Lee la respuesta: viene organizada por partes (en el video, sesión por sesión).</p></li>
+      <li><p>Al final, la herramienta suele <strong>proponerte algo más</strong> (por ejemplo, un cuestionario o tarjetas de estudio). Si te interesa, solo responde «sí».</p></li>
     </ol>
     <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
       <div><strong class="t">Atajo: preguntas sugeridas</strong><p>Debajo del resumen aparecen preguntas ya escritas. Con un clic en cualquiera, la herramienta la responde. No tienes que escribir nada.</p></div></div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>Ideas de preguntas</h3>
+    <p style="margin:0">En el video se pide un «resumen de la información», que es una pregunta general. <strong>Entre más concreta sea tu pregunta, más útil será la respuesta.</strong> Prueba con estas:</p>
     <ul class="preguntas">
-      <li>¿Qué actividades propone la sesión 2?</li>
-      <li>¿Qué materiales necesito para la semana?</li>
-      <li>¿Cómo puedo evaluar la suma de fracciones?</li>
+      <li>¿Qué materiales necesito para la Sesión 1?</li>
+      <li>Dame 3 preguntas para iniciar la clase de multiplicación.</li>
+      <li>¿Cómo puedo evaluar lo que aprendieron en la Sesión 1?</li>
+      <li>¿Qué actividades propone la planeación para toda la semana?</li>
     </ul>
     <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
       <div><strong class="t">Revisa siempre las respuestas</strong><p>Los <strong>números pequeños</strong> junto a la respuesta son citas: con un clic te muestran de qué parte de la planeación salió esa información. La herramienta puede equivocarse, así que compruébalo antes de usarlo con tus alumnos.</p></div></div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">¿La IA se equivoca? ¿Para qué sirven los números?</span><span class="extra-dur">2 min</span></summary>
+      <div class="extra-cuerpo">
+        <p>Dos fragmentos de una clase grabada. En el primero, el instructor aclara que con Gemini Notebook el riesgo de que la IA invente algo es <strong>menor, pero nunca es cero</strong>. En el segundo muestra cómo, al dar clic en un número de cita, la herramienta te lleva <strong>exactamente a la parte de la fuente</strong> de donde salió el dato. Su ejemplo es sobre el clima, no sobre una planeación.</p>
+        <h4>1. El riesgo nunca es cero (38 s)</h4>
+        <div class="video" data-inicio="218" data-fin="256" data-yt="6W3E3ia-fK0" data-titulo="Video complementario: la IA puede equivocarse aunque use tus fuentes"><a class="video-alt" href="https://www.youtube.com/watch?v=6W3E3ia-fK0&amp;t=218s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <h4>2. Las citas te llevan a la fuente (1:26 min)</h4>
+        <div class="video" data-inicio="704" data-fin="790" data-yt="6W3E3ia-fK0" data-titulo="Video complementario: para qué sirven las citas"><a class="video-alt" href="https://www.youtube.com/watch?v=6W3E3ia-fK0&amp;t=704s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> EDteam. (2026). <em>Gemini Notebook (NotebookLM): la IA para aprenderlo todo</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=6W3E3ia-fK0" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmentos:</strong> del 3:38 al 4:16 y del 11:44 al 13:10</p>
+      </div>
+    </details>
   </div>
 </section>
 
 <!-- ===================== LECCIÓN 5 ===================== -->
-<section class="leccion" id="leccion-5" data-titulo="Lección 5: Crea un informe" data-corto="Crea un informe" aria-labelledby="t-l5">
+<section class="leccion" id="inicio-5" data-tema="1" data-tipo="leccion" data-num="5" data-objetivo="Crear una guía pedagógica de la planeación." data-titulo="Tema 1 · Lección 5: Crea un informe" data-corto="Crea un informe" aria-labelledby="t-l5">
   <div class="hero" style="--c1:#B45309;--c2:#B91C1C">
-    <span class="pre">Lección 5 de 8</span>
+    <span class="pre">Tema 1 · Lección 5 de 8</span>
     <h2 id="t-l5" tabindex="-1">Crea un informe</h2>
-    <p>Un <strong>informe</strong> es un documento que la herramienta escribe con tus fuentes: un resumen, una guía de estudio o un texto tipo blog.</p>
+    <p>Un <strong>informe</strong> es un documento que la herramienta escribe con tus fuentes. Incluso te propone formatos pensados para tu planeación, como una <strong>guía pedagógica</strong>.</p>
     <span class="num-grande" aria-hidden="true">5</span>
   </div>
-  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear una guía de estudio de la planeación.</p></div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear una guía pedagógica de la planeación.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Un <strong>informe</strong> es un documento que la herramienta escribe por ti a partir de tus fuentes. Puede ser un resumen, una guía de estudio o un texto tipo blog. Además, la herramienta lee tus fuentes y te <strong>sugiere plantillas</strong> pensadas para ellas; con una planeación, por ejemplo, propone una <strong>Guía Pedagógica</strong>, un Informe de Alineación Didáctica, una Ficha Explicativa o un Manual de Dinámicas.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Tener un resumen claro de una planeación o documento largo.</li><li>Ver en un solo documento los aprendizajes esperados, los tiempos y la forma de evaluar.</li><li>Preparar una guía de estudio o de repaso para tus alumnos.</li><li>Contar con un texto base que puedes adaptar para padres de familia o reuniones.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>El domingo generas la <strong>Guía Pedagógica</strong> de la semana. En una sola lectura ves qué aprendizaje busca la Sesión 1 de multiplicación, cuánto dura cada fase de la clase y cómo evaluarla. Así llegas al salón con todo claro.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="F_wkO20ow3g" data-titulo="Video: cómo crear un informe en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=F_wkO20ow3g" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="P3YkLeBW8Wg" data-titulo="Video: cómo crear un informe en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=P3YkLeBW8Wg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
-      <li><p>En el panel <strong>Studio</strong> (derecha), da clic en <span class="bn">Informes</span>.</p></li>
-      <li><p>En <strong>Formato</strong>, elige <span class="bn">Documento</span>.</p></li>
-      <li><p>En <strong>Plantilla</strong>, elige <span class="bn">Guía de estudio</span>.</p></li>
+      <li><p>En el panel <strong>Studio</strong> (derecha), da clic en <span class="bn">Informes</span>. Se abre la ventana <strong>«Crear informe»</strong>.</p></li>
+      <li><p>En <strong>Formato</strong>, elige <span class="bn">Documento</span> (un documento con todo el texto).</p></li>
+      <li><p>En <strong>Plantilla sugerida</strong>, elige <span class="bn">Guía Pedagógica</span>. Si no te aparece, elige <span class="bn">Guía de estudio</span>.</p></li>
       <li><p>Da clic en <span class="bn">Generar ahora</span>.</p></li>
       <li><p>Espera. Verás <strong>«Generando informe…»</strong>. Puede tardar hasta un minuto; es normal.</p></li>
       <li><p>Cuando termine, el informe aparece en la lista de Studio. Da clic sobre él para abrirlo.</p></li>
@@ -593,99 +871,144 @@ try{
       <div><strong class="t">Tu informe queda guardado</strong><p>Si lo cierras, no se pierde: siempre lo encuentras en la lista de abajo del panel Studio.</p></div></div>
     <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
       <div><strong class="t">Léelo antes de usarlo</strong><p>A veces el informe usa palabras técnicas. Revísalo y adáptalo a tu forma de enseñar.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿Interactivo o Documento?</strong><p><strong>Documento</strong> es un texto para leer o imprimir; es el que usamos en el curso. <strong>Interactivo</strong> (opción nueva) junta el texto con otros contenidos de Studio. Las plantillas sugeridas cambian según tus fuentes, por eso las tuyas pueden tener otros nombres.</p></div></div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">Así lo usa otro profesor: un informe interactivo</span><span class="extra-dur">51 s</span></summary>
+      <div class="extra-cuerpo">
+        <p>Un profesor muestra cómo preparó el material de un tema con un <strong>informe interactivo</strong>: en un solo documento reunió el resumen, la presentación, la infografía, el mapa y el cuestionario. Sus ejemplos son de bachillerato en España, pero la idea funciona igual con tu planeación de primaria.</p>
+        <div class="video vertical" data-yt="fAsDQhGaGnI" data-titulo="Video complementario: un profesor crea materiales con un informe interactivo de Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/shorts/fAsDQhGaGnI" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Díaz, R. (2026). <em>Crea materiales para tus clases y ahorra horas con Gemini Notebook</em> [Video]. YouTube. <a href="https://www.youtube.com/shorts/fAsDQhGaGnI" target="_blank" rel="noopener">Ver en YouTube ↗</a> · Video corto completo</p>
+      </div>
+    </details>
   </div>
 </section>
 
 <!-- ===================== LECCIÓN 6 ===================== -->
-<section class="leccion" id="leccion-6" data-titulo="Lección 6: Crea un mapa mental" data-corto="Crea un mapa mental" aria-labelledby="t-l6">
+<section class="leccion" id="inicio-6" data-tema="1" data-tipo="leccion" data-num="6" data-objetivo="Crear un mapa mental, explorarlo y guardarlo como imagen." data-titulo="Tema 1 · Lección 6: Crea un mapa mental" data-corto="Crea un mapa mental" aria-labelledby="t-l6">
   <div class="hero" style="--c1:#7C3AED;--c2:#DB2777">
-    <span class="pre">Lección 6 de 8</span>
+    <span class="pre">Tema 1 · Lección 6 de 8</span>
     <h2 id="t-l6" tabindex="-1">Crea un mapa mental</h2>
     <p>Ve la planeación organizada en un esquema que puedes descargar como imagen.</p>
     <span class="num-grande" aria-hidden="true">6</span>
   </div>
   <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear un mapa mental, explorarlo y guardarlo como imagen.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Un <strong>mapa mental</strong> es un esquema visual que muestra las <strong>ideas principales</strong> de tus fuentes y cómo se relacionan entre sí, como ramas que salen de un tema central.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Ver de un vistazo cómo está organizado un tema o una semana de trabajo.</li><li>Explicar un tema a tu grupo de forma visual, proyectándolo o imprimiéndolo.</li><li>Apoyar a los alumnos que aprenden mejor con imágenes y esquemas.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Al iniciar el tema, proyectas el mapa mental de la semana para que tus alumnos vean qué van a aprender: primero multiplicación y después fracciones. Al final lo usas de nuevo para repasar todo lo que vieron.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="O-GHU0S7Dd4" data-titulo="Video: cómo crear un mapa mental en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=O-GHU0S7Dd4" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="L5ddZ12udh0" data-titulo="Video: cómo crear un mapa mental en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=L5ddZ12udh0" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
       <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Mapa mental</span>.</p></li>
       <li><p>Revisa que el idioma diga <strong>español</strong>.</p></li>
-      <li><p>El recuadro <strong>«¿Cuál debería ser el tema?»</strong> es <strong>opcional</strong>. Puedes dejarlo vacío o escribir algo como <em>solo fracciones</em> para enfocar el mapa.</p></li>
+      <li><p>El recuadro <strong>«¿Cuál debería ser el tema?»</strong> es <strong>opcional</strong>. Los textos grises que trae («Cosas que puedes probar…») son solo ejemplos y no tienen que ver con tu planeación. Puedes dejarlo vacío, como en el video, o escribir algo como <em>centrarse solo en la Sesión 1: multiplicación</em>.</p></li>
       <li><p>Da clic en <span class="bn">Generar ahora</span> y espera unos segundos.</p></li>
-      <li><p>Abre el mapa desde la lista de Studio. Da clic en las <strong>flechitas ›</strong> de cada recuadro para abrir o cerrar las ramas.</p></li>
-      <li><p>Para guardarlo como imagen, usa el botón de <strong>descargar ⤓</strong> (abajo a la derecha del mapa).</p></li>
+      <li><p>Abre el mapa desde la lista de Studio. Al centro está la planeación y sale <strong>una rama por cada sesión</strong>. Da clic en las <strong>flechitas ›</strong> de cada recuadro para abrir o cerrar las ramas (aprendizaje esperado, secuencia didáctica, evaluación).</p></li>
+      <li><p>Con los botones <strong>+</strong> y <strong>−</strong> (a la derecha) acercas o alejas el mapa. Para guardarlo como imagen, usa el botón de <strong>descargar ⤓</strong> (abajo a la derecha).</p></li>
     </ol>
     <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
-      <div><strong class="t">Truco</strong><p>Si das clic en una parte del mapa, el chat te explica ese tema. Y la imagen descargada la puedes imprimir o proyectar en clase.</p></div></div>
+      <div><strong class="t">Truco</strong><p>Si das clic en un recuadro del mapa, la pregunta se escribe sola en el chat (por ejemplo, «Analiza lo que dicen estas fuentes sobre…») y la herramienta te explica ese tema. Y la imagen descargada la puedes imprimir o proyectar en clase.</p></div></div>
   </div>
 </section>
 
 <!-- ===================== LECCIÓN 7 ===================== -->
-<section class="leccion" id="leccion-7" data-titulo="Lección 7: Crea una tabla de datos" data-corto="Crea una tabla de datos" aria-labelledby="t-l7">
+<section class="leccion" id="inicio-7" data-tema="1" data-tipo="leccion" data-num="7" data-objetivo="Crear una tabla con las sesiones de la planeación y revisarla." data-titulo="Tema 1 · Lección 7: Crea una tabla de datos" data-corto="Crea una tabla de datos" aria-labelledby="t-l7">
   <div class="hero" style="--c1:#0F766E;--c2:#15803D">
-    <span class="pre">Lección 7 de 8</span>
+    <span class="pre">Tema 1 · Lección 7 de 8</span>
     <h2 id="t-l7" tabindex="-1">Crea una tabla de datos</h2>
     <p>Ordena la planeación en una tabla que puedes abrir en Hojas de cálculo de Google.</p>
     <span class="num-grande" aria-hidden="true">7</span>
   </div>
   <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear una tabla con las sesiones de la planeación y revisarla.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Una <strong>tabla de datos</strong> ordena la información de tus fuentes en filas y columnas, por ejemplo: sesión, tema, aprendizaje, actividades y materiales. Se puede abrir en Hojas de cálculo de Google para editarla.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Tener la semana completa organizada en una sola hoja.</li><li>Revisar rápido qué materiales necesitas preparar para cada sesión.</li><li>Compartir la organización de tu trabajo con colegas o con tu director.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>El viernes generas la tabla de la semana siguiente, la abres en Hojas de cálculo, agregas una columna de «Listo» y vas marcando los materiales conforme los preparas.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="wvl0AD1zMe0" data-titulo="Video: cómo crear una tabla de datos en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=wvl0AD1zMe0" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="q36eMiQ5QPg" data-titulo="Video: cómo crear una tabla de datos en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=q36eMiQ5QPg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
       <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Tabla de datos</span>.</p></li>
-      <li><p>El recuadro <strong>«Describe la tabla de datos que quieres crear»</strong> es <strong>opcional</strong>. Puedes dejarlo vacío o escribir, por ejemplo: <em>una tabla con las actividades de cada sesión y sus materiales</em>.</p></li>
+      <li><p>Se abre la ventana <strong>«Personalizar tabla de datos»</strong>. Revisa que el idioma diga <strong>español</strong>. El recuadro <strong>«Describe la tabla de datos que quieres crear»</strong> es <strong>opcional</strong>; sus textos grises son solo ejemplos. Puedes dejarlo vacío, como en el video, o escribir: <em>tabla de las 5 sesiones con tema, tiempo y materiales</em>.</p></li>
       <li><p>Da clic en <span class="bn">Generar ahora</span> y espera unos segundos.</p></li>
-      <li><p>Abre la tabla desde la lista de Studio. Verás una fila por cada sesión de la planeación.</p></li>
-      <li><p>Si quieres editarla o imprimirla, ábrela en <strong>Hojas de cálculo de Google</strong> con el botón de exportar que está arriba de la tabla.</p></li>
+      <li><p>Abre la tabla desde la lista de Studio. Verás <strong>una fila por cada sesión</strong>, con columnas como tema, aprendizaje esperado, duración y <strong>recursos MED</strong>.</p></li>
+      <li><p>Si quieres editarla o imprimirla, ábrela en <strong>Hojas de cálculo de Google</strong> con el botón de exportar (íconos de arriba a la derecha de la tabla). Se abre en otra pestaña, con la hoja <strong>«Tabla 1»</strong> y otra llamada <strong>«Referencias de fuentes»</strong>.</p></li>
     </ol>
     <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
       <div><strong class="t">Revisa los datos</strong><p>A veces una casilla sale con un signo <strong>«?»</strong> porque a la herramienta le faltó información. Revisa la tabla y complétala tú si hace falta.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿El texto se ve cortado en Hojas de cálculo?</strong><p>No falta información: las columnas son angostas. Selecciona todo (<strong>Ctrl + A</strong>) y ve a <strong>Formato → Ajuste → Ajustar</strong> para ver el texto completo.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Si aparece un mensaje para «cambiar a plan superior»…</strong><p>…es un anuncio de Google. <strong>No necesitas pagar nada</strong> para este curso; ciérralo con la <strong>X</strong>.</p></div></div>
   </div>
 </section>
 
 <!-- ===================== LECCIÓN 8 ===================== -->
-<section class="leccion" id="leccion-8" data-titulo="Lección 8: Comparte y copia el enlace" data-corto="Comparte y copia el enlace" aria-labelledby="t-l8">
+<section class="leccion" id="inicio-8" data-tema="1" data-tipo="leccion" data-num="8" data-objetivo="Copiar el enlace de tus productos para entregarlos." data-titulo="Tema 1 · Lección 8: Comparte y copia el enlace" data-corto="Comparte y copia el enlace" aria-labelledby="t-l8">
   <div class="hero" style="--c1:#1E40AF;--c2:#7C3AED">
-    <span class="pre">Lección 8 de 8</span>
+    <span class="pre">Tema 1 · Lección 8 de 8</span>
     <h2 id="t-l8" tabindex="-1">Comparte tu producto y copia el enlace</h2>
-    <p>Así obtienes el enlace de lo que creaste para entregarlo en Classroom.</p>
+    <p>Así obtienes el enlace de lo que creaste para entregarlo en tu actividad.</p>
     <span class="num-grande" aria-hidden="true">8</span>
   </div>
-  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> copiar el enlace de tus productos y pegarlo en la tarea de Classroom.</p></div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> copiar el enlace de tus productos, comprobar que se abre y pegarlo en el documento de tu actividad.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p><strong>Compartir</strong> es dar acceso a otras personas para que vean lo que creaste en Gemini Notebook. Al copiar el enlace, cualquiera que lo abra puede ver tu producto sin modificar tu cuaderno.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Entregar tus actividades de este curso.</li><li>Compartir tus materiales con otros docentes de tu escuela.</li><li>Enviar a tu director o coordinador lo que preparaste, sin mandar archivos pesados.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Preparaste un mapa mental y una tabla de datos de la semana de multiplicación. Copias sus enlaces y los mandas por WhatsApp a tus compañeros de 3er grado, para que también los usen con sus grupos.</p></div>
+  </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="HfyaPtyW7eQ" data-titulo="Video: cómo compartir un producto y copiar su enlace en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=HfyaPtyW7eQ" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="8SfVGNRasIM" data-titulo="Video: cómo compartir un producto y copiar su enlace en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=8SfVGNRasIM" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso: copiar el enlace</h3>
     <ol class="pasos">
       <li><p>En la lista de <strong>Studio</strong>, busca el producto que quieres entregar (por ejemplo, tu mapa mental) y da clic en sus <strong>tres puntos ⋮</strong>.</p></li>
-      <li><p>Elige <span class="bn">Compartir</span>.</p></li>
+      <li><p>Elige <span class="bn">Compartir</span>. Se abre la ventana <strong>«Compartir notebook y el artefacto»</strong> («artefacto» es el nombre que le da la herramienta a cada producto).</p></li>
       <li><p>En <strong>Acceso al cuaderno</strong>, cambia <strong>«Restringido»</strong> por <span class="bn">Cualquier persona con el enlace</span>.</p></li>
       <li><p>Te recomendamos <strong>quitar la palomita</strong> de <strong>«Permitir copias»</strong>. Así nadie puede duplicar tu cuaderno.</p></li>
       <li><p>Da clic en <span class="bn">Guardar</span>.</p></li>
-      <li><p>Da clic en <span class="bn">Copiar enlace</span>. El enlace queda copiado, listo para pegarlo.</p></li>
+      <li><p>Da clic en <span class="bn">Copiar enlace a artefacto</span>. El enlace queda copiado, listo para pegarlo.</p></li>
     </ol>
     <div class="aviso bien"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span>
-      <div><strong class="t">El cambio de acceso solo lo haces una vez</strong><p>Es para todo el cuaderno. Para tus otros productos solo repite: <strong>tres puntos ⋮ → Compartir → Copiar enlace</strong>.</p></div></div>
+      <div><strong class="t">El cambio de acceso solo lo haces una vez</strong><p>Es para todo el cuaderno. Para tus otros productos solo repite: <strong>tres puntos ⋮ → Compartir → Copiar enlace a artefacto</strong>.</p></div></div>
 
-    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-volver"/></svg></span>Paso a paso: pegarlo en Classroom</h3>
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span>Comprueba que tu enlace funciona</h3>
     <ol class="pasos">
-      <li><p>En Classroom, abre la tarea del tema.</p></li>
-      <li><p>En <strong>Tu trabajo</strong>, da clic en <span class="bn">+ Agregar o crear</span> y elige <span class="bn">Vínculo</span>.</p></li>
-      <li><p>Pega el enlace y da clic en <span class="bn">Agregar vínculo</span>. Repite por cada producto.</p></li>
-      <li><p>Cuando estén todos, da clic en <span class="bn">Entregar</span>.</p></li>
+      <li><p>Abre una pestaña nueva del navegador, pega el enlace en la barra de direcciones y presiona <strong>Enter</strong>.</p></li>
+      <li><p>Si ves tu producto en una página con el título <strong>Gemini Notebook</strong> y el botón <strong>«Al cuaderno»</strong>, ¡funciona! Así lo verá quien reciba tu enlace.</p></li>
+    </ol>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Para no perder tus enlaces</strong><p>En el video se pegan en el <strong>Bloc de notas</strong> para guardarlos un momento. Tú puedes pegarlos directamente en el documento de la actividad.</p></div></div>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-volver"/></svg></span>Paso a paso: entregar tus enlaces</h3>
+    <ol class="pasos">
+      <li><p>En Classroom, abre la tarea del tema y abre el <strong>documento de la actividad</strong> que viene en ella.</p></li>
+      <li><p>Escribe tu nombre en la tabla <strong>«Pega aquí tus enlaces»</strong> y pega cada enlace en el renglón de su producto (clic derecho → Pegar, o <strong>Ctrl + V</strong>).</p></li>
+      <li><p>Cuando estén todos, regresa a la tarea y da clic en <span class="bn">Entregar</span>. Tu documento se entrega junto con la tarea.</p></li>
     </ol>
     <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
       <div><strong class="t">Si se queda en «Restringido»…</strong><p>…tu maestro no podrá abrir el enlace. Revisa que diga <strong>Cualquier persona con el enlace</strong> y que hayas dado clic en <strong>Guardar</strong>.</p></div></div>
@@ -693,25 +1016,504 @@ try{
 </section>
 
 <!-- ===================== ACTIVIDAD ===================== -->
-<section class="leccion" id="reto" data-titulo="Actividad del Tema 1" data-corto="Actividad del tema" aria-labelledby="t-reto">
+<section class="leccion" id="inicio-actividad" data-tema="1" data-tipo="actividad" data-objetivo="Entregar tus tres productos del tema." data-titulo="Actividad del Tema 1" data-corto="Actividad del Tema 1" aria-labelledby="t-reto">
   <div class="hero" style="--c1:#B45309;--c2:#6D3FD9">
     <span class="pre"><svg aria-hidden="true" width="18" height="18"><use href="#i-estrella"/></svg>Actividad del Tema 1</span>
     <h2 id="t-reto" tabindex="-1">Tu actividad: mi primer cuaderno</h2>
     <p>¡Terminaste las lecciones! Ahora entrega tu actividad en Classroom.</p>
-    <div class="acciones"><a class="btn-h" id="volver-classroom" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-volver"/></svg>Ir a Classroom a entregar</a></div>
+    <div class="acciones"><a class="btn-h ir-classroom" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-volver"/></svg>Ir a Classroom a entregar</a></div>
+  </div>
+
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> demostrar que ya sabes crear un cuaderno con una fuente y generar tres productos que puedes usar en tu práctica docente.</p></div>
+
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Para qué sirve esta actividad?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué demuestras?</span><p>Que ya sabes crear un cuaderno, agregarle una fuente y usar Studio para convertir una planeación en productos útiles para tu trabajo.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué te llevas?</span><p>Tu primer cuaderno de trabajo, con una guía pedagógica, un mapa mental y una tabla de datos que te ayudan a entender y organizar una semana de clases. Es la base que usarás en el Tema 2.</p></div>
+    </div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Lo que debes entregar</h3>
+    <p style="margin:0">Pega los tres enlaces en la tabla <strong>«Pega aquí tus enlaces»</strong> del documento de la actividad, que encontrarás en la tarea de Classroom:</p>
+    <ul class="revisar">
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Informe</strong> (Guía Pedagógica o Guía de estudio).</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Mapa mental</strong>.</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Tabla de datos</strong>.</span></li>
+    </ul>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿No recuerdas cómo copiar el enlace?</strong><p>Regresa a la <a href="#inicio-8">Lección 8: Comparte y copia el enlace</a>.</p></div></div>
+    <div class="aviso bien"><span class="ico"><svg aria-hidden="true"><use href="#i-estrella"/></svg></span>
+      <div><strong class="t">¡Muy bien!</strong><p>Ya sabes entrar, crear un cuaderno, agregar una fuente, conversar con el chat y crear tres productos. En el Tema 2 harás materiales para tus alumnos.</p></div></div>
+  </div>
+</section>
+
+<!-- ======================================================================= -->
+<!-- ===================== TEMA 2 · DESARROLLO ============================= -->
+<!-- ======================================================================= -->
+
+<!-- ===================== PORTADA TEMA 2 ===================== -->
+<section class="leccion" id="desarrollo" data-tema="2" data-tipo="portada" data-titulo="Tema 2: Desarrollo" data-corto="Inicio del Tema 2" aria-labelledby="t-desarrollo">
+  <div class="hero" style="--c1:#B45309;--c2:#DB2777">
+    <span class="pre"><svg aria-hidden="true" width="18" height="18"><use href="#i-libro"/></svg>Tema 2 · Desarrollo</span>
+    <h2 id="t-desarrollo" tabindex="-1">Materiales para tus alumnos</h2>
+    <p>Ya sabes crear un cuaderno y organizar una planeación. Ahora usarás Gemini Notebook para crear <strong>materiales que tus alumnos pueden usar</strong>: tarjetas para practicar, cuestionarios, infografías y presentaciones.</p>
+    <div class="acciones">
+      <a class="btn-h" href="#desarrollo-1"><svg aria-hidden="true"><use href="#i-play"/></svg>Empezar la Lección 1</a>
+    </div>
+    <div class="datos">
+      <div class="dato"><strong>4 lecciones</strong><span>cortas y paso a paso</span></div>
+      <div class="dato"><strong>4 videos</strong><span>de 2 a 3 minutos</span></div>
+      <div class="dato"><strong>1 actividad</strong><span>para entregar en Classroom</span></div>
+    </div>
+  </div>
+
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Objetivo del tema:</strong> que crees, a partir de una planeación, cuatro materiales para tus alumnos (tarjetas didácticas, un cuestionario, una infografía y una presentación) y que los revises y adaptes antes de usarlos en clase.</p></div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Antes de empezar</h3>
+    <p style="margin:0">Usarás <strong>el mismo cuaderno del Tema 1</strong>, con la planeación de Matemáticas de 3er grado como fuente. Si todavía no lo tienes, regresa a la <a href="#inicio-2">Lección 2</a> y a la <a href="#inicio-3">Lección 3</a> del Tema 1.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>El secreto de este tema: dile para quién es</h3>
+    <p style="margin:0">Todas las funciones de este tema tienen un recuadro para <strong>describir lo que quieres</strong>. Si escribes <strong>para quién es</strong> y <strong>qué quieres que practiquen</strong>, el material sale listo para tus alumnos. Si no lo dices, puede salir pensado para el maestro o con palabras muy técnicas.</p>
+    <div class="comparar">
+      <div class="comp comp-mal"><span class="comp-eti">✗ Muy general</span><p>«resumen»</p><p class="comp-nota">El resultado puede salir con preguntas sobre la planeación o con lenguaje técnico, pensado para el maestro.</p></div>
+      <div class="comp comp-bien"><span class="comp-eti">✓ Claro y para el alumno</span><p>«tarjetas para que alumnos de 3er grado practiquen las multiplicaciones de la Sesión 1»</p><p class="comp-nota">El resultado sale enfocado en lo que tus alumnos necesitan practicar.</p></div>
+    </div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">Un experto lo explica: no solo des «Generar»</span><span class="extra-dur">1:15 min</span></summary>
+      <div class="extra-cuerpo">
+        <p>El instructor explica que si solo das clic en «Generar», <strong>le dejas a la IA decidir por ti</strong>, y que basta con decirle lo que quieres con tus propias palabras, como se lo contarías a un amigo. Es justo el secreto de este tema.</p>
+        <div class="video" data-inicio="1799" data-fin="1874" data-yt="6W3E3ia-fK0" data-titulo="Video complementario: no solo des Generar"><a class="video-alt" href="https://www.youtube.com/watch?v=6W3E3ia-fK0&amp;t=1799s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> EDteam. (2026). <em>Gemini Notebook (NotebookLM): la IA para aprenderlo todo</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=6W3E3ia-fK0" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 29:59 al 31:14</p>
+      </div>
+    </details>
+
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Aprende también de los videos</strong><p>En los videos de este tema se escriben instrucciones generales, como «que solo se centre en la sesión 1 y 2», y por eso los materiales salen pensados <strong>para el maestro</strong>: preguntas sobre tiempos de la clase, un plan semanal o una estrategia didáctica. Sirven para conocer cada función. En cada lección te damos la instrucción <strong>para alumnos</strong>, lista para copiar.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-libro"/></svg></span>
+      <div><strong class="t">¿Qué sesión usar?</strong><p>En los videos aparecen distintas sesiones de la semana (por ejemplo, la Sesión 2, de fracciones). En los ejemplos de esta página seguimos con la <strong>Sesión 1: multiplicación</strong>, pero tú puedes enfocarte en la sesión o el tema que quieras.</p></div></div>
+
+    <div class="aviso imp">
+      <span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Revisa siempre antes de usarlo en clase</strong>
+      <p>La inteligencia artificial puede equivocarse, escribir mal alguna palabra o usar lenguaje difícil. Tú conoces a tu grupo: revisa y adapta cada material antes de usarlo.</p></div>
+    </div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Lecciones de este tema</h3>
+    <ul class="mapa-lec" data-mapa-tema="2"></ul>
+  </div>
+</section>
+
+<!-- ===================== TEMA 2 · LECCIÓN 1 ===================== -->
+<section class="leccion" id="desarrollo-1" data-tema="2" data-tipo="leccion" data-num="1" data-objetivo="Crear tarjetas didácticas para que tus alumnos practiquen un tema." data-titulo="Tema 2 · Lección 1: Crea tarjetas didácticas" data-corto="Crea tarjetas didácticas" aria-labelledby="t-d1">
+  <div class="hero" style="--c1:#DB2777;--c2:#7C3AED">
+    <span class="pre">Tema 2 · Lección 1 de 4</span>
+    <h2 id="t-d1" tabindex="-1">Crea tarjetas didácticas</h2>
+    <p>Tarjetas con una pregunta de un lado y la respuesta del otro, para practicar y repasar.</p>
+    <span class="num-grande" aria-hidden="true">1</span>
+  </div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear tarjetas didácticas para que tus alumnos practiquen un tema de la planeación.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Las <strong>tarjetas didácticas</strong> (también llamadas <em>flashcards</em>) muestran una pregunta o un concepto de un lado y la respuesta del otro. El alumno intenta responder, voltea la tarjeta y marca si ya lo sabe o si necesita repasarlo.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Hacer repasos rápidos al inicio o al final de la clase.</li><li>Que tus alumnos practiquen multiplicaciones, fracciones o vocabulario de forma divertida.</li><li>Darte cuenta de qué temas todavía no les quedan claros.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Al terminar la clase de multiplicación, proyectas las tarjetas y el grupo responde en voz alta. Las que más fallan, las repasas al día siguiente.</p></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
+    <div class="video" data-yt="qQ2tInHkkwU" data-titulo="Video: cómo crear tarjetas didácticas en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=qQ2tInHkkwU" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
+    <ol class="pasos">
+      <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Tarjetas didácticas</span>.</p></li>
+      <li><p>En <strong>Número de tarjetas</strong> elige <span class="bn">Menos</span>, <span class="bn">Estándar</span> o <span class="bn">Más</span>.</p></li>
+      <li><p>En <strong>Nivel de dificultad</strong> elige <span class="bn">Fácil</span>, <span class="bn">Medio</span> o <span class="bn">Difícil</span>. Para primaria, empieza con Fácil o Medio.</p></li>
+      <li><p>En <strong>Incluir imágenes</strong> (opción nueva) elige si quieres tarjetas con dibujos (<span class="bn">Incluir</span>) o <span class="bn">Solo texto</span>. Revisa que el idioma diga <strong>español</strong>.</p></li>
+      <li><p>En <strong>«¿Cuál debería ser el tema?»</strong> escribe para quién son y qué deben practicar. Los textos grises son solo ejemplos. Te sugerimos: <em>tarjetas para que alumnos de 3er grado practiquen las multiplicaciones de la Sesión 1; pon la multiplicación al frente y el resultado al reverso</em>.</p></li>
+      <li><p>Da clic en <span class="bn">Generar ahora</span> y espera unos segundos.</p></li>
+      <li><p>Abre las tarjetas desde la lista de Studio. Lee la pregunta y da clic en <strong>Mira la respuesta</strong> para voltear la tarjeta.</p></li>
+      <li><p>Marca <strong>✓</strong> si la sabías o <strong>✗</strong> si hay que repasarla, y usa las flechas para pasar a la siguiente.</p></li>
+    </ol>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Si no dices para quién son…</strong><p>…las tarjetas pueden salir con preguntas sobre la planeación, como «¿A qué grado corresponde la sesión 1?». Esas le sirven al maestro, no al alumno. Escribe siempre para quién son.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Lo que pasó en el video</strong><p>Se escribió <em>«que solo se centre en la sección 1 y 2»</em>, sin decir para quién. Por eso salieron tarjetas para el maestro, como «¿Cuánto tiempo se sugiere dedicar a la etapa de Desarrollo en la Sesión 1?». Con la instrucción del paso 5 salen operaciones para que practiquen tus alumnos.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Consejo</strong><p>Escribe bien el tema que pides (por ejemplo, «sesiones» y no «secciones»). Mientras más claro lo escribas, mejor sale el resultado.</p></div></div>
+  </div>
+</section>
+
+<!-- ===================== TEMA 2 · LECCIÓN 2 ===================== -->
+<section class="leccion" id="desarrollo-2" data-tema="2" data-tipo="leccion" data-num="2" data-objetivo="Crear un cuestionario que se califica solo y explica las respuestas." data-titulo="Tema 2 · Lección 2: Crea un cuestionario" data-corto="Crea un cuestionario" aria-labelledby="t-d2">
+  <div class="hero" style="--c1:#1F4FD1;--c2:#0E7490">
+    <span class="pre">Tema 2 · Lección 2 de 4</span>
+    <h2 id="t-d2" tabindex="-1">Crea un cuestionario</h2>
+    <p>Preguntas que se califican solas y explican cada respuesta.</p>
+    <span class="num-grande" aria-hidden="true">2</span>
+  </div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear un cuestionario para que tus alumnos practiquen y sepan al momento si respondieron bien.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Un <strong>cuestionario interactivo</strong> hecho con tus fuentes. Al contestar cada pregunta te dice si la respuesta es <strong>correcta o incorrecta</strong> y explica por qué. Al final muestra la <strong>puntuación</strong> y permite volver a intentarlo.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Hacer un diagnóstico o un repaso antes de un examen.</li><li>Ver en qué preguntas se equivoca más tu grupo.</li><li>Crear con un clic otro cuestionario para seguir practicando.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Antes del examen de multiplicación, proyectas el cuestionario y lo resuelven en equipos. Al final revisas la puntuación y repasas las preguntas que más fallaron.</p></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
+    <div class="video" data-yt="KsO-R1FurlQ" data-titulo="Video: cómo crear un cuestionario en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=KsO-R1FurlQ" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
+    <ol class="pasos">
+      <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Cuestionario</span>.</p></li>
+      <li><p>Elige el <strong>Número de preguntas</strong> (<span class="bn">Menos</span>, <span class="bn">Estándar</span> o <span class="bn">Más</span>) y el <strong>Nivel de dificultad</strong>. Para primaria, empieza con <span class="bn">Fácil</span>.</p></li>
+      <li><p>En <strong>Incluir imágenes</strong> (opción nueva) elige <span class="bn">Incluir</span> o <span class="bn">Solo texto</span>.</p></li>
+      <li><p>En <strong>Tipos de pregunta</strong> (opción nueva) marca los que quieras: <span class="bn">Varias opciones</span>, <span class="bn">Selección múltiple</span>, <span class="bn">Rellena los espacios en blanco</span> o <span class="bn">Respuesta breve</span>. Para primaria funcionan muy bien Varias opciones y Rellena los espacios en blanco.</p></li>
+      <li><p>En <strong>«¿Cuál debería ser el tema?»</strong> escribe para quién es. Debajo aparecen <strong>temas sugeridos</strong> en botones (por ejemplo, «Retos de Multiplicación»); puedes usarlos como punto de partida. Te sugerimos: <em>cuestionario para que alumnos de 3er grado practiquen multiplicaciones de la Sesión 1 con problemas de la vida diaria</em>.</p></li>
+      <li><p>Da clic en <span class="bn">Generar ahora</span>. Puede tardar cerca de un minuto; es normal.</p></li>
+      <li><p>Abre el cuestionario desde la lista de Studio y elige una respuesta. Verás <strong>«Respuesta correcta»</strong> o <strong>«Respuesta incorrecta»</strong> con la explicación.</p></li>
+      <li><p>Al final aparece <strong>Tu puntuación</strong> con la lista de preguntas <strong>falladas</strong>. Desde ahí puedes elegir <span class="bn">Vuelve a intentarlo</span> o <span class="bn">Generar un cuestionario complementario</span>.</p></li>
+    </ol>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Revisa las preguntas</strong><p>A veces se mezclan preguntas para el maestro (por ejemplo, cuántos minutos dura una etapa de la clase). Si te pasa, genera otro cuestionario con un tema más claro.</p></div></div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">¿Salió una pregunta que no te sirve? Edítala o bórrala</span><span class="extra-dur">40 s</span></summary>
+      <div class="extra-cuerpo">
+        <p>Una novedad reciente: ya puedes <strong>modificar, agregar o eliminar preguntas</strong> de un cuestionario, y también <strong>tarjetas</strong> de la Lección 1, sin tener que generar todo de nuevo. Así quitas las preguntas que salieron para el maestro. Los ejemplos del video son de biología. Si todavía no ves esta opción en tu cuenta, genera de nuevo con una descripción más clara.</p>
+        <div class="video vertical" data-inicio="52" data-fin="92" data-yt="yy-gV_WIn6o" data-titulo="Video complementario: cómo editar preguntas y tarjetas"><a class="video-alt" href="https://www.youtube.com/watch?v=yy-gV_WIn6o&amp;t=52s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Lomelí, P. (2026). <em>7 actualizaciones de Gemini Notebook para estudiar como ninja</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=yy-gV_WIn6o" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 0:52 al 1:32</p>
+      </div>
+    </details>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Lo que pasó en el video</strong><p>Se escribió <em>«solo céntrate en la sección 2 de la planeación»</em> (la de fracciones). Algunas preguntas sirven a los alumnos, como «¿cuánto es 1/4 + 1/4?», pero otras son para el maestro, como «¿cuál es la duración de la etapa de Desarrollo?». Por eso conviene decir siempre que es <strong>para alumnos</strong>.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿Cómo lo uso con mis alumnos?</strong><p>Lo más sencillo es <strong>proyectarlo en clase y responder en grupo o en equipos</strong>. Si quieres que cada alumno lo conteste en su propio dispositivo, pruébalo antes: es probable que necesiten una cuenta de Google para abrir el enlace.</p></div></div>
+  </div>
+</section>
+
+<!-- ===================== TEMA 2 · LECCIÓN 3 ===================== -->
+<section class="leccion" id="desarrollo-3" data-tema="2" data-tipo="leccion" data-num="3" data-objetivo="Crear una infografía para imprimir o proyectar." data-titulo="Tema 2 · Lección 3: Crea una infografía" data-corto="Crea una infografía" aria-labelledby="t-d3">
+  <div class="hero" style="--c1:#B45309;--c2:#15803D">
+    <span class="pre">Tema 2 · Lección 3 de 4</span>
+    <h2 id="t-d3" tabindex="-1">Crea una infografía</h2>
+    <p>Una imagen con dibujos, colores y poco texto que resume un tema.</p>
+    <span class="num-grande" aria-hidden="true">3</span>
+  </div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear una infografía atractiva y descargarla para imprimirla o proyectarla.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Una <strong>infografía</strong> es una imagen que combina dibujos, colores y frases cortas para explicar un tema de un vistazo. Tú eliges la <strong>orientación</strong>, el <strong>estilo de dibujo</strong> y cuánto texto lleva.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Hacer carteles para el salón o el periódico mural.</li><li>Tener un apoyo visual al explicar un tema.</li><li>Compartir con madres y padres de familia lo que se verá en la semana.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Imprimes en tamaño carta, en vertical, una infografía con los pasos para multiplicar y la pegas en el periódico mural para que tus alumnos la consulten toda la semana.</p></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
+    <div class="video" data-yt="35mQpZOnm8k" data-titulo="Video: cómo crear una infografía en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=35mQpZOnm8k" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
+    <ol class="pasos">
+      <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Infografía</span>.</p></li>
+      <li><p>En <strong>Elegir orientación</strong>: <span class="bn">Vertical</span> para imprimir como cartel, <span class="bn">Horizontal</span> para proyectar o <span class="bn">Cuadrado</span> para compartir por celular.</p></li>
+      <li><p>En <strong>Elige un estilo visual</strong> escoge el dibujo que más te guste. Para niños funcionan muy bien <span class="bn">Kawaii</span> o <span class="bn">Arcilla</span>.</p></li>
+      <li><p>En <strong>Nivel de detalle</strong>: <span class="bn">Conciso</span> si quieres poco texto, <span class="bn">Estándar</span> o <span class="bn">Detallado</span> (en prueba) si quieres más información. Revisa que el idioma diga <strong>español</strong>.</p></li>
+      <li><p>En <strong>«Describe la infografía que quieres crear»</strong> escribe qué quieres y para quién. Te sugerimos: <em>infografía para alumnos de 3er grado que explique paso a paso cómo multiplicar, con un ejemplo y poco texto</em>.</p></li>
+      <li><p>Da clic en <span class="bn">Generar ahora</span> y espera unos segundos.</p></li>
+      <li><p>Abre la infografía desde la lista de Studio. Usa el botón <strong>+</strong> para acercarte y leer los detalles.</p></li>
+      <li><p>Descárgala con el botón de <strong>descargar ⤓</strong> (arriba a la derecha). Se guarda como imagen <strong>PNG</strong> en tu carpeta <strong>Descargas</strong>, lista para imprimir o proyectar.</p></li>
+    </ol>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Revisa el texto antes de imprimir</strong><p>En las imágenes hechas con inteligencia artificial a veces sale alguna palabra mal escrita o cortada. Léela con calma antes de imprimirla o compartirla.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Lo que pasó en el video</strong><p>Se eligió orientación Horizontal y estilo automático, sin describir para quién era. El resultado fue un <strong>plan semanal</strong> muy vistoso con las 5 sesiones: útil para ti o para mostrar a madres y padres de familia. Para tus alumnos, usa la descripción del paso 5 y prueba los estilos <strong>Kawaii</strong> o <strong>Arcilla</strong> en <strong>Vertical</strong>.</p></div></div>
+  </div>
+</section>
+
+<!-- ===================== TEMA 2 · LECCIÓN 4 ===================== -->
+<section class="leccion" id="desarrollo-4" data-tema="2" data-tipo="leccion" data-num="4" data-objetivo="Crear una presentación para tu clase y descargarla en PowerPoint." data-titulo="Tema 2 · Lección 4: Crea una presentación" data-corto="Crea una presentación" aria-labelledby="t-d4">
+  <div class="hero" style="--c1:#6D3FD9;--c2:#B45309">
+    <span class="pre">Tema 2 · Lección 4 de 4</span>
+    <h2 id="t-d4" tabindex="-1">Crea una presentación</h2>
+    <p>Diapositivas listas para proyectar en clase o para descargar y editar en PowerPoint.</p>
+    <span class="num-grande" aria-hidden="true">4</span>
+  </div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear una presentación para apoyar tu clase y descargarla para editarla.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Una <strong>presentación</strong> es un conjunto de diapositivas con títulos, texto e imágenes, hecha a partir de tus fuentes. Hay dos formatos: <strong>Diapositivas del presentador</strong> (pocas palabras, para explicar mientras proyectas) y <strong>Presentación detallada</strong> (más texto, para leerla o enviarla).</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Tener diapositivas listas para proyectar en clase.</li><li>Preparar una exposición para madres y padres de familia o para el Consejo Técnico.</li><li>Descargarla en PowerPoint y ajustarla a tu manera.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Generas una presentación corta para explicar la multiplicación, la descargas en PowerPoint, cambias las palabras difíciles por otras que tus alumnos entiendan y la proyectas en clase.</p></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
+    <div class="video" data-yt="XsTZ6Q9fDes" data-titulo="Video: cómo crear una presentación en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=XsTZ6Q9fDes" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
+    <ol class="pasos">
+      <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Presentación</span>.</p></li>
+      <li><p>En <strong>Formato</strong>, para dar clase elige <span class="bn">Diapositivas del presentador</span>. Si la quieres para leer o enviar, elige <span class="bn">Presentación detallada</span>.</p></li>
+      <li><p>En <strong>Duración</strong> elige <span class="bn">Corto</span> o <span class="bn">Predeterminada</span>. Revisa que el idioma diga <strong>español</strong>.</p></li>
+      <li><p>En <strong>«Describe la presentación que quieres crear»</strong> escribe para quién es y cómo debe hablar. Te sugerimos: <em>presentación para alumnos de 3er grado que explique paso a paso cómo multiplicar, con ejemplos de la vida diaria y lenguaje sencillo</em>.</p></li>
+      <li><p><strong>Opcional:</strong> activa <strong>«Revisar esquema de diapositiva»</strong> si quieres ver y cambiar los títulos de las diapositivas antes de que se cree la presentación.</p></li>
+      <li><p>Da clic en <span class="bn">Generar ahora</span>. Esta función puede tardar un poco más que las otras; es normal.</p></li>
+      <li><p>Abre la presentación desde la lista de Studio. A la derecha verás las diapositivas en miniatura.</p></li>
+      <li><p>Para proyectarla en clase, da clic en <strong>Presentar ▶</strong> y se verá en pantalla completa.</p></li>
+      <li><p>Para editarla, abre los <strong>tres puntos ⋮</strong> y elige <span class="bn">Descargar PowerPoint (.pptx)</span>. También puedes descargarla en <strong>PDF</strong>, como en el video; se guarda en tu carpeta <strong>Descargas</strong>.</p></li>
+    </ol>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Cuida el lenguaje</strong><p>Si no dices para quién es, la presentación puede usar palabras técnicas como «vehículo pedagógico» o «puente cognitivo». Pide lenguaje sencillo o cámbialas tú en PowerPoint antes de proyectarla.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Lo que pasó en el video</strong><p>Se eligió <strong>Presentación detallada</strong>, duración <strong>Corto</strong> y se escribió <em>«resumen de cada una de las sesiones enfocado a los aprendizajes»</em>. El resultado fue «Estrategia Didáctica de Matemáticas», con un diseño muy cuidado pero pensado para el maestro. Para dar clase a tus alumnos, elige <strong>Diapositivas del presentador</strong> y usa la descripción del paso 4.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Consejo</strong><p>El archivo de PowerPoint también lo puedes abrir y editar en Presentaciones de Google.</p></div></div>
+  </div>
+</section>
+
+<!-- ===================== ACTIVIDAD TEMA 2 ===================== -->
+<section class="leccion" id="desarrollo-actividad" data-tema="2" data-tipo="actividad" data-objetivo="Entregar tus cuatro materiales para alumnos." data-titulo="Actividad del Tema 2" data-corto="Actividad del Tema 2" aria-labelledby="t-dact">
+  <div class="hero" style="--c1:#DB2777;--c2:#6D3FD9">
+    <span class="pre"><svg aria-hidden="true" width="18" height="18"><use href="#i-estrella"/></svg>Actividad del Tema 2</span>
+    <h2 id="t-dact" tabindex="-1">Tu actividad: materiales para mis alumnos</h2>
+    <p>¡Terminaste las lecciones del Tema 2! Ahora entrega tu actividad en Classroom.</p>
+    <div class="acciones"><a class="btn-h ir-classroom" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-volver"/></svg>Ir a Classroom a entregar</a></div>
+  </div>
+
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> demostrar que puedes crear, a partir de una planeación, cuatro materiales pensados para tus alumnos.</p></div>
+
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Para qué sirve esta actividad?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué demuestras?</span><p>Que puedes crear materiales pensados para tus alumnos, escribiendo descripciones claras, y que los revisas antes de usarlos en clase.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué te llevas?</span><p>Cuatro materiales listos para usar con tu grupo (tarjetas, cuestionario, infografía y presentación) y la práctica de pedirle a la herramienta exactamente lo que necesitas.</p></div>
+    </div>
   </div>
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Lo que debes entregar</h3>
     <ul class="revisar">
-      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Informe</strong> (guía de estudio).</span></li>
-      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Mapa mental</strong>.</span></li>
-      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Tabla de datos</strong>.</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tus <strong>Tarjetas didácticas</strong>.</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Cuestionario</strong>.</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Infografía</strong>.</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Presentación</strong>.</span></li>
     </ul>
     <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
-      <div><strong class="t">¿No recuerdas cómo copiar el enlace?</strong><p>Regresa a la <a href="#leccion-8">Lección 8: Comparte y copia el enlace</a>.</p></div></div>
+      <div><strong class="t">Recuerda: dile para quién es</strong><p>Al crear cada material, escribe en el recuadro que es para alumnos de primaria y qué deben practicar. Así tus materiales salen listos para usar en clase.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿Cómo copio los enlaces?</strong><p>Tu cuaderno ya está compartido desde el Tema 1, así que solo repite: <strong>tres puntos ⋮ → Compartir → Copiar enlace a artefacto</strong>. Si no lo recuerdas, regresa a la <a href="#inicio-8">Lección 8 del Tema 1</a>.</p></div></div>
     <div class="aviso bien"><span class="ico"><svg aria-hidden="true"><use href="#i-estrella"/></svg></span>
-      <div><strong class="t">¡Muy bien!</strong><p>Ya sabes entrar, crear un cuaderno, agregar una fuente, conversar con el chat y crear tres productos. En el Tema 2 harás materiales para tus alumnos.</p></div></div>
+      <div><strong class="t">¡Muy bien!</strong><p>Ya sabes crear tarjetas, cuestionarios, infografías y presentaciones para tus alumnos. En el Tema 3 crearás resúmenes en audio y en video.</p></div></div>
+  </div>
+</section>
+
+<!-- ======================================================================= -->
+<!-- ===================== TEMA 3 · CIERRE ================================= -->
+<!-- ======================================================================= -->
+
+<!-- ===================== PORTADA TEMA 3 ===================== -->
+<section class="leccion" id="cierre" data-tema="3" data-tipo="portada" data-titulo="Tema 3: Cierre" data-corto="Inicio del Tema 3" aria-labelledby="t-cierre">
+  <div class="hero" style="--c1:#0E7490;--c2:#6D3FD9">
+    <span class="pre"><svg aria-hidden="true" width="18" height="18"><use href="#i-libro"/></svg>Tema 3 · Cierre</span>
+    <h2 id="t-cierre" tabindex="-1">Resúmenes en audio y video</h2>
+    <p>En este tema crearás dos recursos que se escuchan y se ven: un <strong>resumen en audio</strong>, como un pódcast, y un <strong>resumen en video</strong> con ilustraciones. Son ideales para repasar, para alumnos que aprenden escuchando o viendo, y para compartir con madres y padres de familia.</p>
+    <div class="acciones">
+      <a class="btn-h" href="#cierre-1"><svg aria-hidden="true"><use href="#i-play"/></svg>Empezar la Lección 1</a>
+    </div>
+    <div class="datos">
+      <div class="dato"><strong>2 lecciones</strong><span>cortas y paso a paso</span></div>
+      <div class="dato"><strong>2 videos</strong><span>con todo el proceso</span></div>
+      <div class="dato"><strong>1 actividad</strong><span>para entregar en Classroom</span></div>
+    </div>
+  </div>
+
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Objetivo del tema:</strong> que crees, a partir de la planeación, un resumen en audio y un resumen en video, y que sepas descargarlos y compartirlos para repasar los temas con tus alumnos o con las familias.</p></div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Antes de empezar</h3>
+    <p style="margin:0">Usarás <strong>el mismo cuaderno</strong> de los Temas 1 y 2, con la planeación de Matemáticas de 3er grado como fuente. Si todavía no lo tienes, regresa a la <a href="#inicio-2">Lección 2</a> y a la <a href="#inicio-3">Lección 3</a> del Tema 1.</p>
+
+    <div class="aviso tip">
+      <span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Estas funciones tardan más</strong>
+      <p>El audio y el video pueden tardar <strong>varios minutos</strong> en crearse. No te preocupes: puedes cerrar la ventana o seguir trabajando. Cuando estén listos, aparecerán guardados en el panel Studio.</p></div>
+    </div>
+    <div class="aviso tip">
+      <span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Usa bien tus intentos</strong>
+      <p>En la cuenta gratuita hay un <strong>límite de uso</strong> que se renueva cada cierto número de horas y cada semana. Antes de dar clic en <span class="bn">Generar ahora</span>, revisa con calma las opciones y tu descripción. Si llegas al límite, espera y vuelve a intentarlo más tarde.</p></div>
+    </div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">¿Cómo funcionan los límites de uso?</span><span class="extra-dur">37 s</span></summary>
+      <div class="extra-cuerpo">
+        <p>Un creador de contenido muestra dónde se ven los límites de uso de Gemini Notebook: se renuevan <strong>cada 5 horas</strong> y <strong>cada semana</strong>, y en la cuenta gratuita son menores que en las de pago. Los números pueden cambiar con el tiempo.</p>
+        <div class="video" data-inicio="1643" data-fin="1680" data-yt="XtrZzfPwCyE" data-titulo="Video complementario: los límites de uso"><a class="video-alt" href="https://www.youtube.com/watch?v=XtrZzfPwCyE&amp;t=1643s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Rivera, A. (2026). <em>Cómo usar Gemini Notebook de 0 a experto: la IA gratis que hace todo</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=XtrZzfPwCyE" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 27:23 al 28:00</p>
+      </div>
+    </details>
+    <div class="aviso imp">
+      <span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Escucha y mira antes de compartir</strong>
+      <p>Las voces y las imágenes las crea la inteligencia artificial: pueden pronunciar mal alguna palabra, incluir texto en inglés o decir algo inexacto. Revísalos completos antes de enviarlos a tus alumnos o a las familias.</p></div>
+    </div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Lecciones de este tema</h3>
+    <ul class="mapa-lec" data-mapa-tema="3"></ul>
+  </div>
+</section>
+
+<!-- ===================== TEMA 3 · LECCIÓN 1 ===================== -->
+<section class="leccion" id="cierre-1" data-tema="3" data-tipo="leccion" data-num="1" data-objetivo="Crear un resumen en audio y descargarlo para compartirlo." data-titulo="Tema 3 · Lección 1: Crea un resumen en audio" data-corto="Crea un resumen en audio" aria-labelledby="t-c1">
+  <div class="hero" style="--c1:#0E7490;--c2:#1F4FD1">
+    <span class="pre">Tema 3 · Lección 1 de 2</span>
+    <h2 id="t-c1" tabindex="-1">Crea un resumen en audio</h2>
+    <p>Una conversación entre dos voces que explican tus fuentes, como un pódcast.</p>
+    <span class="num-grande" aria-hidden="true">1</span>
+  </div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear un resumen en audio de la planeación y descargarlo para compartirlo.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Un <strong>resumen en audio</strong> es una grabación hecha por la herramienta en la que <strong>dos voces conversan</strong> sobre tus fuentes y explican sus ideas principales, como en un pódcast. Puedes elegir entre cuatro formatos: Información detallada, Breve, Crítica o Debate.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Repasar un tema mientras haces otras cosas, por ejemplo camino a la escuela.</li><li>Apoyar a los alumnos que aprenden mejor escuchando.</li><li>Enviar a las familias un resumen de lo que se verá en clase.</li><li>Recibir comentarios sobre tu propia planeación con el formato Crítica.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Generas un resumen breve sobre la multiplicación de la Sesión 1, lo descargas y lo envías al grupo de WhatsApp de madres y padres para que lo escuchen en casa con sus hijos.</p></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
+    <div class="video" data-yt="QZD8t8xYzYg" data-titulo="Video: cómo crear un resumen en audio en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=QZD8t8xYzYg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
+    <ol class="pasos">
+      <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Resumen de audio</span>.</p></li>
+      <li><p>En <strong>Formato</strong> elige uno: <span class="bn">Información detallada</span> (una conversación completa, como pódcast), <span class="bn">Breve</span> (corto, con las ideas principales; ideal para alumnos), <span class="bn">Crítica</span> (comentarios para mejorar tu material) o <span class="bn">Debate</span> (dos puntos de vista sobre el tema).</p></li>
+      <li><p>Revisa que el idioma diga <strong>español</strong> y elige la <strong>Duración</strong>: <span class="bn">Corto</span> o <span class="bn">Predeterminada</span>. Para usarlo con alumnos o familias, te recomendamos <strong>Corto</strong>.</p></li>
+      <li><p>En <strong>«¿En qué deben centrarse los presentadores?»</strong> escribe lo que quieres (los textos grises son solo ejemplos), o da clic en una sugerencia rápida como <span class="bn">+ Enfoque docente</span>, <span class="bn">+ Guía práctica</span> o <span class="bn">+ Estructura pedagógica</span>.</p></li>
+      <li><p>Da clic en <span class="bn">Generar ahora</span>. Puede tardar varios minutos; mientras tanto puedes seguir trabajando. En el video se recortó esa espera.</p></li>
+      <li><p>Cuando esté listo, aparece en la lista de Studio. Da clic sobre él para escucharlo. Abajo de Studio se abre un reproductor: puedes pausar, <strong>retroceder o adelantar 10 segundos</strong> y cambiar la <strong>velocidad</strong> para oírlo más lento o más rápido.</p></li>
+      <li><p>Para guardarlo o enviarlo, abre los <strong>tres puntos ⋮</strong> del audio y elige <span class="bn">Descargar</span>.</p></li>
+    </ol>
+    <div class="paneles" style="margin-top:1rem">
+      <div class="panel"><span class="eti">Para ti</span><strong>Ejemplo de descripción</strong><p><em>Analiza las estrategias pedagógicas para explicar multiplicaciones y fracciones en tercer grado.</em></p></div>
+      <div class="panel"><span class="eti">Para tus alumnos</span><strong>Ejemplo de descripción</strong><p><em>Resumen breve para que alumnos de 3er grado repasen la multiplicación de la Sesión 1, con lenguaje sencillo.</em></p></div>
+    </div>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Escúchalo antes de compartirlo</strong><p>Las voces son de la inteligencia artificial: a veces pronuncian mal una palabra o explican algo de forma inexacta. Escúchalo completo antes de enviarlo.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Lo que pasó en el video</strong><p>Se dejó el formato <strong>Información detallada</strong>, la duración <strong>Predeterminada</strong> y el recuadro de enfoque vacío. El resultado fue un audio sobre fracciones y multiplicaciones de <strong>¡más de 20 minutos!</strong>: útil para que tú lo escuches, pero muy largo para alumnos o familias. Para ellos, elige <strong>Breve</strong> o <strong>Corto</strong> y usa la descripción «Para tus alumnos» de arriba.</p></div></div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">Así se ve una descripción detallada para un audio</span><span class="extra-dur">42 s</span></summary>
+      <div class="extra-cuerpo">
+        <p>Otro ejemplo de cómo pedir un audio pensado para quien lo va a escuchar: el creador describe para quién es (personas que aprenden inglés), su nivel, los temas exactos y en qué idioma debe ser la conversación. Lo mismo puedes hacer para tus alumnos de primaria.</p>
+        <div class="video" data-inicio="1108" data-fin="1150" data-yt="XtrZzfPwCyE" data-titulo="Video complementario: un resumen de audio con descripción detallada"><a class="video-alt" href="https://www.youtube.com/watch?v=XtrZzfPwCyE&amp;t=1108s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Rivera, A. (2026). <em>Cómo usar Gemini Notebook de 0 a experto: la IA gratis que hace todo</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=XtrZzfPwCyE" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 18:28 al 19:10</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== TEMA 3 · LECCIÓN 2 ===================== -->
+<section class="leccion" id="cierre-2" data-tema="3" data-tipo="leccion" data-num="2" data-objetivo="Crear un resumen en video para proyectarlo o compartirlo." data-titulo="Tema 3 · Lección 2: Crea un resumen en video" data-corto="Crea un resumen en video" aria-labelledby="t-c2">
+  <div class="hero" style="--c1:#6D3FD9;--c2:#DB2777">
+    <span class="pre">Tema 3 · Lección 2 de 2</span>
+    <h2 id="t-c2" tabindex="-1">Crea un resumen en video</h2>
+    <p>Un video con ilustraciones y narración que explica tus fuentes.</p>
+    <span class="num-grande" aria-hidden="true">2</span>
+  </div>
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> crear un resumen en video de la planeación y descargarlo para proyectarlo o compartirlo.</p></div>
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Un <strong>resumen en video</strong> es un video narrado, con ilustraciones, frases cortas y esquemas, que explica las ideas principales de tus fuentes. Tú eliges el <strong>formato</strong> (Corto o Video explicativo) y el <strong>estilo de los dibujos</strong>.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Iniciar o cerrar un tema en clase de forma atractiva.</li><li>Dar a tus alumnos un repaso visual que pueden ver varias veces.</li><li>Apoyar a los alumnos que aprenden mejor viendo.</li><li>Compartir con las familias lo que se trabaja en clase.</li></ul></div>
+    </div>
+    <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Antes de la actividad del elefante de la Sesión 1, proyectas un video corto que explica para qué sirven las multiplicaciones. Así tus alumnos llegan a la actividad con interés.</p></div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
+    <div class="video" data-yt="e2MLjtEnc_E" data-titulo="Video: cómo crear un resumen en video en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=e2MLjtEnc_E" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
+    <ol class="pasos">
+      <li><p>En el panel <strong>Studio</strong>, da clic en <span class="bn">Resumen de video</span>.</p></li>
+      <li><p>En <strong>Formato</strong> elige <span class="bn">Corto</span> (una vista rápida; ideal para alumnos o para repasar) o <span class="bn">Video explicativo</span> (más completo; para ti o para presentar un tema).</p></li>
+      <li><p>Revisa que el idioma diga <strong>español</strong> y, en <strong>Elige un estilo visual</strong>, escoge el dibujo. Para niños funcionan muy bien <span class="bn">Kawaii</span> o <span class="bn">Pizarra</span>.</p></li>
+      <li><p>En <strong>«¿En qué debe centrarse el video?»</strong> da clic en una sugerencia rápida (por ejemplo, <span class="bn">Multiplicaciones para niños</span>) o en <span class="bn">Personalizar tema</span> y escribe para quién es. Por ejemplo: <em>video corto para que alumnos de 3er grado entiendan para qué sirven las multiplicaciones</em>.</p></li>
+      <li><p>Opcional: activa <strong>«Revisar notas del productor»</strong> si quieres leer y ajustar el guion antes de que se cree el video.</p></li>
+      <li><p>Da clic en <span class="bn">Generar ahora</span>. Es la función que más tarda: puede tomar varios minutos (en el video se recortó esa espera). Puedes cerrar la ventana y regresar después; el video quedará guardado en Studio.</p></li>
+      <li><p>Abre el video desde la lista de Studio y dale reproducir. Usa la <strong>pantalla completa</strong> para proyectarlo en clase; también puedes cambiar la velocidad.</p></li>
+      <li><p>Para guardarlo o enviarlo, abre los <strong>tres puntos ⋮</strong> del video y elige <span class="bn">Descargar</span>.</p></li>
+    </ol>
+    <div class="aviso imp"><span class="ico"><svg aria-hidden="true"><use href="#i-alerta"/></svg></span>
+      <div><strong class="t">Revisa el texto de las imágenes</strong><p>En las ilustraciones pueden salir palabras en inglés (como «buy» o «save») o mal escritas. Mira el video completo antes de compartirlo con tus alumnos.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Antes de generar, revisa tus opciones</strong><p>El resumen en video es de las funciones que más uso consumen en la cuenta gratuita. Elige con calma el formato, el estilo y la descripción antes de dar clic en <span class="bn">Generar ahora</span>. Si aparece un mensaje de <strong>límite</strong>, no hiciste nada mal: espera y vuelve más tarde. Cuando veas «<strong>Límite restablecido</strong>», ya puedes usar otra vez todas las funciones.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>
+      <div><strong class="t">Lo que pasó en el video</strong><p>Se eligió <strong>Video explicativo</strong> sin escoger una sugerencia ni escribir un tema. Salió «Matemáticas 3er Grado: Sem. 7», un video de casi <strong>5 minutos</strong> muy bien ilustrado que habla, entre otras cosas, de por qué importan las multiplicaciones. Para tus alumnos, elige <strong>Corto</strong>, el estilo <strong>Kawaii</strong> o <strong>Pizarra</strong> y la sugerencia <strong>Multiplicaciones para niños</strong>.</p></div></div>
+    <details class="extra">
+      <summary><span class="extra-eti">Dato extra · opcional</span><span class="extra-tit">Compara: Video explicativo y Corto</span><span class="extra-dur">2:14 min</span></summary>
+      <div class="extra-cuerpo">
+        <p>Con la misma descripción (sobre el Titanic), el creador genera un <strong>Video explicativo</strong> de más de 7 minutos y un <strong>Corto</strong> vertical de 1 minuto, con más animación. Así ves la diferencia antes de elegir el tuyo.</p>
+        <div class="video" data-inicio="1286" data-fin="1420" data-yt="XtrZzfPwCyE" data-titulo="Video complementario: comparación entre video explicativo y corto"><a class="video-alt" href="https://www.youtube.com/watch?v=XtrZzfPwCyE&amp;t=1286s" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+        <p class="extra-fuente"><strong>Fuente:</strong> Rivera, A. (2026). <em>Cómo usar Gemini Notebook de 0 a experto: la IA gratis que hace todo</em> [Video]. YouTube. <a href="https://www.youtube.com/watch?v=XtrZzfPwCyE" target="_blank" rel="noopener">Ver completo en YouTube ↗</a> · <strong>Fragmento:</strong> del 21:26 al 23:40</p>
+      </div>
+    </details>
+  </div>
+</section>
+
+<!-- ===================== ACTIVIDAD TEMA 3 ===================== -->
+<section class="leccion" id="cierre-actividad" data-tema="3" data-tipo="actividad" data-objetivo="Entregar tu resumen en audio y tu resumen en video." data-titulo="Actividad del Tema 3" data-corto="Actividad del Tema 3" aria-labelledby="t-cact">
+  <div class="hero" style="--c1:#0E7490;--c2:#DB2777">
+    <span class="pre"><svg aria-hidden="true" width="18" height="18"><use href="#i-estrella"/></svg>Actividad del Tema 3</span>
+    <h2 id="t-cact" tabindex="-1">Tu actividad: escuchar y ver para repasar</h2>
+    <p>¡Terminaste las lecciones del Tema 3! Ahora entrega tu actividad en Classroom.</p>
+    <div class="acciones"><a class="btn-h ir-classroom" href="#" target="_blank" rel="noopener"><svg aria-hidden="true"><use href="#i-volver"/></svg>Ir a Classroom a entregar</a></div>
+  </div>
+
+  <div class="objetivo"><span class="ico"><svg aria-hidden="true"><use href="#i-meta"/></svg></span><p><strong>Lo que vas a lograr:</strong> demostrar que puedes crear, a partir de una planeación, un resumen en audio y un resumen en video listos para compartir.</p></div>
+
+  <div class="tarjeta ctx">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Para qué sirve esta actividad?</h3>
+    <div class="ctx-grid">
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué demuestras?</span><p>Que dominas las funciones más completas de la herramienta, que eliges el formato adecuado para cada uso y que revisas el resultado antes de compartirlo.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué te llevas?</span><p>Un audio y un video listos para repasar con tus alumnos o enviar a las familias. Con ellos completas las nueve funciones de Studio que aprendiste en el curso.</p></div>
+    </div>
+  </div>
+
+  <div class="tarjeta">
+    <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Lo que debes entregar</h3>
+    <ul class="revisar">
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Resumen en audio</strong>.</span></li>
+      <li><span class="caja" aria-hidden="true"></span><span>El enlace de tu <strong>Resumen en video</strong>.</span></li>
+    </ul>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">Hazla con tiempo</strong><p>El audio y el video pueden tardar varios minutos en crearse y tienen un límite de uso. No dejes esta actividad para el último momento.</p></div></div>
+    <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
+      <div><strong class="t">¿Cómo copio los enlaces?</strong><p>Tu cuaderno ya está compartido desde el Tema 1, así que solo repite: <strong>tres puntos ⋮ → Compartir → Copiar enlace a artefacto</strong>. Si no lo recuerdas, regresa a la <a href="#inicio-8">Lección 8 del Tema 1</a>.</p></div></div>
+    <div class="aviso bien"><span class="ico"><svg aria-hidden="true"><use href="#i-estrella"/></svg></span>
+      <div><strong class="t">¡Felicidades!</strong><p>Ya conoces las nueve funciones de Studio. En la Evidencia final aplicarás todo lo que aprendiste con una planeación tuya, de tu grado y tu materia.</p></div></div>
   </div>
 </section>
 
@@ -723,7 +1525,7 @@ try{
   <button type="button" class="btn" id="cerrar-lightbox">✕ Cerrar</button>
 </div>
 
-<footer>Curso Gemini Notebook para docentes de primaria · Tema 1: Inicio</footer>
+<footer>Curso Gemini Notebook para docentes de primaria · <span class="version">Versión 11</span></footer>
 
 <script>
 (function(){
@@ -735,15 +1537,22 @@ try{
   var lat=document.getElementById('lateral'), fondo=document.getElementById('fondo-drawer'), bl=document.getElementById('btn-lecciones');
   var panel=document.getElementById('panel-acc'), ba=document.getElementById('btn-acc');
   var bLeer=document.getElementById('btn-leer'), leyendo=false, voz=('speechSynthesis' in window);
-  document.getElementById('volver-classroom').href=ENLACE_CLASSROOM;
+  document.querySelectorAll('.ir-classroom').forEach(function(a){ a.href=ENLACE_CLASSROOM; });
   document.getElementById('volver-classroom-top').href=ENLACE_CLASSROOM;
+
+  // Enlaces anteriores (por si ya se pegaron en Classroom): siguen funcionando
+  var ALIAS={'reto':'inicio-actividad'};
+  for(var k=1;k<=8;k++){ ALIAS['leccion-'+k]='inicio-'+k; }
+  var NOMBRE_TEMA={'1':'Tema 1 · Inicio','2':'Tema 2 · Desarrollo','3':'Tema 3 · Cierre','4':'Evidencia final'};
 
   function guardar(k,v){try{localStorage.setItem(k,v);}catch(e){}}
   function leer(k){try{return localStorage.getItem(k);}catch(e){return null;}}
+  // Conserva el avance guardado con los nombres anteriores
+  Object.keys(ALIAS).forEach(function(v){ if(leer('gn-hecho-'+v)==='1' && leer('gn-hecho-'+ALIAS[v])===null) guardar('gn-hecho-'+ALIAS[v],'1'); });
 
   var secciones=[].slice.call(document.querySelectorAll('section.leccion'));
   var ids=secciones.map(function(s){return s.id;});
-  var lecciones=secciones.filter(function(s){return /^leccion-/.test(s.id);});
+  var lecciones=secciones.filter(function(s){return s.dataset.tipo==='leccion';});
   var total=lecciones.length;
   var actual=null;
 
@@ -752,7 +1561,7 @@ try{
   // ---------- Casilla "Ya terminé" + navegación inferior ----------
   secciones.forEach(function(s,i){
     var cont=s.querySelector('.tarjeta:last-of-type')||s;
-    if(/^leccion-/.test(s.id)){
+    if(s.dataset.tipo==='leccion'){
       var etq=document.createElement('label'); etq.className='terminado';
       var cb=document.createElement('input'); cb.type='checkbox'; cb.checked=hecha(s.id);
       cb.addEventListener('change',function(){guardar('gn-hecho-'+s.id,cb.checked?'1':'0'); pintar();});
@@ -773,22 +1582,30 @@ try{
 
   // ---------- Listas de lecciones (lateral y portada) ----------
   function pintar(){
-    var listaLat=document.getElementById('lista-lec'), mapa=document.getElementById('mapa-lec');
-    listaLat.innerHTML=''; mapa.innerHTML='';
+    var listaLat=document.getElementById('lista-lec');
+    var mapas=[].slice.call(document.querySelectorAll('.mapa-lec[data-mapa-tema]'));
+    listaLat.innerHTML=''; mapas.forEach(function(m){m.innerHTML='';});
+    var temaPrevio=null;
     secciones.forEach(function(s){
-      var num=/^leccion-/.test(s.id)?s.id.split('-')[1]:(s.id==='inicio'?'⌂':'★');
+      var tema=s.dataset.tema, tipo=s.dataset.tipo;
+      var num=tipo==='leccion'?s.dataset.num:(tipo==='portada'?'⌂':'★');
+      if(tema!==temaPrevio){ var g=document.createElement('li'); g.className='grupo-tema'; g.textContent=NOMBRE_TEMA[tema]||('Tema '+tema); listaLat.appendChild(g); temaPrevio=tema; }
       var li=document.createElement('li'); var a=document.createElement('a'); a.href='#'+s.id;
       if(hecha(s.id)) li.className='ok';
       if(s.id===actual) a.setAttribute('aria-current','page');
       a.innerHTML='<span class="n" aria-hidden="true">'+(hecha(s.id)?'✓':num)+'</span>';
       var txt=document.createElement('span'); txt.textContent=s.dataset.corto+(hecha(s.id)?' (terminada)':''); a.appendChild(txt);
       li.appendChild(a); listaLat.appendChild(li);
-      if(s.id!=='inicio'){
-        var li2=document.createElement('li'); var a2=document.createElement('a'); a2.href='#'+s.id;
-        a2.innerHTML='<span class="n" aria-hidden="true">'+num+'</span>';
-        var t2=document.createElement('span'); t2.textContent=s.dataset.corto; a2.appendChild(t2);
-        if(hecha(s.id)){var ok=document.createElement('span'); ok.className='ok'; ok.textContent='✓ Terminada'; a2.appendChild(ok);}
-        li2.appendChild(a2); mapa.appendChild(li2);
+      if(tipo!=='portada'){
+        mapas.filter(function(m){return m.dataset.mapaTema===tema;}).forEach(function(mapa){
+          var li2=document.createElement('li'); var a2=document.createElement('a'); a2.href='#'+s.id;
+          a2.innerHTML='<span class="n" aria-hidden="true">'+num+'</span>';
+          var t2=document.createElement('span'); t2.className='mapa-txt'; t2.textContent=s.dataset.corto;
+          if(s.dataset.objetivo){ var ob=document.createElement('small'); ob.className='mapa-obj'; var o=s.dataset.objetivo; ob.textContent='Lograrás: '+o.charAt(0).toLowerCase()+o.slice(1); t2.appendChild(ob); }
+          a2.appendChild(t2);
+          if(hecha(s.id)){var ok=document.createElement('span'); ok.className='ok'; ok.textContent='✓ Terminada'; a2.appendChild(ok);}
+          li2.appendChild(a2); mapa.appendChild(li2);
+        });
       }
     });
     var n=lecciones.filter(function(s){return hecha(s.id);}).length;
@@ -803,8 +1620,12 @@ try{
   function cargarVideos(sec){
     sec.querySelectorAll('.video[data-yt]').forEach(function(box){
       if(box.querySelector('iframe')) return;
+      if(box.closest('details.extra:not([open])')) return; // los videos opcionales se cargan solo al abrirlos
       var f=document.createElement('iframe');
-      f.src='https://www.youtube.com/embed/'+box.dataset.yt+'?rel=0';
+      var extra='';
+      if(box.dataset.inicio) extra+='&start='+box.dataset.inicio;
+      if(box.dataset.fin) extra+='&end='+box.dataset.fin;
+      f.src='https://www.youtube.com/embed/'+box.dataset.yt+'?rel=0'+extra;
       f.title=box.dataset.titulo;
       f.setAttribute('allow','accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share');
       f.setAttribute('referrerpolicy','strict-origin-when-cross-origin');
@@ -813,6 +1634,7 @@ try{
     });
   }
   function mostrar(id,enfocar){
+    if(ALIAS[id]) id=ALIAS[id];
     if(ids.indexOf(id)===-1) id='inicio';
     if(id===actual) return;
     pararLectura();
@@ -822,7 +1644,11 @@ try{
     sec.classList.add('activa'); cargarVideos(sec);
     actual=id;
     try{document.title=sec.dataset.titulo+' · Curso Gemini Notebook';}catch(e){}
+    var st=document.getElementById('sub-tema'); if(st) st.textContent=(NOMBRE_TEMA[sec.dataset.tema]||'')+' · Docentes de primaria';
     pintar(); cerrarLateral();
+    // En el menú lateral, deja visible la lección actual
+    var actLat=lat.querySelector('a[aria-current="page"]');
+    if(actLat){ try{ lat.scrollTop=Math.max(0, actLat.offsetTop - lat.clientHeight/3); }catch(e){} }
     window.scrollTo(0,0);
     if(enfocar){var h=sec.querySelector('h2'); if(h){try{h.focus({preventScroll:true});}catch(e){h.focus();}}}
   }
@@ -838,6 +1664,7 @@ try{
     if(!a) return;
     var id=a.getAttribute('href').slice(1);
     if(id==='contenido'){ return; }
+    if(ALIAS[id]) id=ALIAS[id];
     if(ids.indexOf(id)!==-1){ e.preventDefault(); ir(id); }
   });
   window.addEventListener('hashchange',function(){ mostrar(location.hash.slice(1),true); });
@@ -848,7 +1675,7 @@ try{
   bl.addEventListener('click',function(){
     var abrir=!lat.classList.contains('abierto');
     lat.classList.toggle('abierto',abrir); fondo.classList.toggle('visible',abrir); bl.setAttribute('aria-expanded',abrir?'true':'false');
-    if(abrir){var l=lat.querySelector('a'); if(l) l.focus();}
+    if(abrir){var l=lat.querySelector('a[aria-current="page"]')||lat.querySelector('a'); if(l){ try{ lat.scrollTop=Math.max(0,l.offsetTop-lat.clientHeight/3); l.focus({preventScroll:true}); }catch(e){ l.focus(); } }}
   });
   fondo.addEventListener('click',cerrarLateral);
 
@@ -897,7 +1724,7 @@ try{
     if(!voz) return;
     if(leyendo){ pararLectura(); return; }
     var sec=document.getElementById(actual); var partes=[];
-    sec.querySelectorAll('h2, .hero p, .objetivo p, h3, ol.pasos > li > p, .aviso .t, .aviso p, .panel, ul.preguntas li, ul.revisar li, .tarjeta > p, .necesitas .nec')
+    sec.querySelectorAll('h2, .hero p, .objetivo p, h3, ol.pasos > li > p, .aviso .t, .aviso p, .panel, ul.preguntas li, ul.revisar li, .tarjeta > p, .necesitas .nec, .ctx-eti, .ctx-bloque p, .ctx-lista li, .ctx-ejemplo p, .obj-general p, .obj-temas li, .plan-intro, .plan-ficha div, .ctx-bloque a')
       .forEach(function(el){ var t=el.innerText.replace(/\s+/g,' ').trim(); if(t) partes.push(t); });
     var u=new SpeechSynthesisUtterance(partes.join('. '));
     u.lang='es-MX'; u.rate=0.95;
@@ -933,8 +1760,13 @@ try{
   document.getElementById('cerrar-lightbox').addEventListener('click',cerrarLightbox);
   lb.addEventListener('click',function(e){ if(e.target===lb) cerrarLightbox(); });
 
+  // Material extra: el video se carga al abrir el recuadro y se detiene al cerrarlo
+  document.querySelectorAll('details.extra').forEach(function(d){
+    d.addEventListener('toggle',function(){ if(d.open) cargarVideos(d); else detenerVideos(d); });
+  });
+
   document.querySelectorAll('.tarjeta').forEach(function(t){
-    var v=t.querySelector('.video[data-yt]'), e=t.querySelector('.enlace-yt');
+    var v=t.querySelector('.video[data-yt]:not(details.extra .video)'), e=t.querySelector('.enlace-yt');
     if(v&&e){ e.href='https://www.youtube.com/watch?v='+v.dataset.yt; e.target='_blank'; e.rel='noopener'; }
   });
 
