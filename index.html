@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Curso Gemini Notebook para docentes de primaria · Versión final (12) · noviembre de 2026 -->
+<!-- Curso Gemini Notebook para docentes de primaria · Versión final (14) · noviembre de 2026 -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -237,6 +237,29 @@ html:not(.js) nav.navega{display:none}
 
 .lightbox{position:fixed;inset:0;z-index:300;background:rgba(0,0,0,.85);display:grid;place-items:center;padding:1rem}
 .lightbox[hidden]{display:none}
+.btn-tipos{display:inline-flex;align-items:center;gap:.5rem;min-height:48px;margin-top:.8rem;padding:.5rem 1rem;border-radius:12px;border:2px solid var(--azul);background:var(--tarjeta);color:var(--azul);font:inherit;font-weight:700;cursor:pointer}
+.btn-tipos:hover{background:var(--azul);color:#fff}
+html.contraste .btn-tipos:hover{color:#000}
+.btn-tipos svg{width:22px;height:22px}
+dialog.tipos{width:min(760px,calc(100vw - 1.5rem));max-height:calc(100vh - 2rem);padding:0;border:2px solid var(--borde);border-radius:22px;background:var(--tarjeta);color:var(--texto);box-shadow:var(--sombra-grande)}
+dialog.tipos::backdrop{background:rgba(20,33,61,.6)}
+.tipos-cab{position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;gap:1rem;padding:1rem 1.2rem;background:var(--tarjeta);border-bottom:1px solid var(--borde);z-index:1}
+.tipos-cab h2{font-family:var(--titulos);font-size:1.25em;margin:0}
+.tipos-cuerpo{padding:1rem 1.2rem 1.3rem}
+.tipos-cuerpo > p{margin:0 0 1rem}
+.tipos-grupo{border:1px solid var(--borde);border-radius:16px;padding:.9rem 1rem;margin-top:.9rem}
+.tipos-grupo.si{background:var(--verde-suave);border-color:var(--verde)}
+.tipos-grupo.no{background:var(--rojo-suave);border-color:var(--rojo)}
+.tipos-grupo h3{font-family:var(--titulos);font-size:1.05em;margin:0 0 .6rem}
+.tipos-tabla{width:100%;border-collapse:collapse}
+.tipos-tabla th,.tipos-tabla td{text-align:left;vertical-align:top;padding:.55rem .4rem;border-top:1px solid var(--borde)}
+.tipos-tabla th{width:34%;font-weight:700}
+.tipos-tabla tr:first-child th,.tipos-tabla tr:first-child td{border-top:0}
+.ext{display:inline-block;font-family:ui-monospace,Consolas,monospace;font-size:.85em;font-weight:700;background:var(--tarjeta);border:1px solid var(--borde);border-radius:8px;padding:.05rem .4rem;margin:.1rem .15rem .1rem 0}
+.tipos-lista{margin:0;padding-left:1.2rem}
+.tipos-lista li{margin:.35rem 0}
+.tipos-fuente{font-size:.88em;color:var(--suave);margin-top:1rem}
+@media (max-width:560px){.tipos-tabla th,.tipos-tabla td{display:block;width:auto;padding:.2rem 0}.tipos-tabla td{padding-bottom:.6rem}.tipos-tabla th{border-top:1px solid var(--borde);padding-top:.6rem}}
 .lightbox img{max-width:100%;max-height:85vh;border-radius:12px;background:#fff}
 .lightbox button{position:absolute;top:1rem;right:1rem}
 
@@ -498,7 +521,7 @@ try{
       <li><strong>Tema 1 · Inicio.</strong> Organizar una planeación en Gemini Notebook y crear con ella un informe, un mapa mental y una tabla de datos.</li>
       <li><strong>Tema 2 · Desarrollo.</strong> Crear materiales para los alumnos (tarjetas didácticas, cuestionario, infografía y presentación) y revisarlos antes de usarlos en clase.</li>
       <li><strong>Tema 3 · Cierre.</strong> Crear resúmenes en audio y en video para repasar los temas y compartirlos.</li>
-      <li><strong>Evidencia final.</strong> Aplicar lo aprendido con una planeación propia, de tu grado y tu materia.</li>
+      <li><strong>Evidencia final.</strong> Aplicar lo aprendido en un cuaderno nuevo, con un tema que vayas a trabajar con tu grupo y tus propias fuentes (de preferencia, tu planeación).</li>
     </ol>
   </div>
 
@@ -597,7 +620,7 @@ try{
     </div>
 
     <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
-      <div><strong class="t">Nota</strong><p>Tú puedes cargar <strong>tu propia planeación</strong>. La que usamos es solo para fines de demostración. En la evidencia final del curso trabajarás con una planeación tuya.</p></div></div>
+      <div><strong class="t">Nota</strong><p>Tú puedes cargar <strong>tu propia planeación</strong>. La que usamos es solo para fines de demostración. En la evidencia final del curso trabajarás con un tema de tu grupo y tus propias fuentes, de preferencia tu planeación.</p></div></div>
   </div>
 
   <div class="tarjeta">
@@ -739,7 +762,8 @@ try{
   <div class="tarjeta ctx">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>¿Qué es y para qué te sirve?</h3>
     <div class="ctx-grid">
-      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Las <strong>fuentes</strong> son los materiales que le das a la herramienta para que trabaje: páginas web, archivos PDF, documentos de Google, videos de YouTube o texto que pegues. Gemini Notebook <strong>solo usa esas fuentes</strong> para responder y crear.</p></div>
+      <div class="ctx-bloque"><span class="ctx-eti">¿Qué es?</span><p>Las <strong>fuentes</strong> son los materiales que le das a la herramienta para que trabaje: páginas web, archivos PDF, documentos de Google, videos de YouTube o texto que pegues. Gemini Notebook <strong>solo usa esas fuentes</strong> para responder y crear.</p>
+        <button type="button" class="btn-tipos" data-abre="dlg-tipos" aria-haspopup="dialog"><svg aria-hidden="true"><use href="#i-libro"/></svg>Ver qué tipos de archivo acepta</button></div>
       <div class="ctx-bloque"><span class="ctx-eti">¿Para qué te sirve como docente?</span><ul class="ctx-lista"><li>Que las respuestas se basen en <strong>tu</strong> planeación o en el libro que usas, no en información general de internet.</li><li>Reunir en un solo lugar varios materiales de un mismo tema.</li><li>Revisar la información con confianza, porque sabes de dónde viene.</li></ul></div>
     </div>
     <div class="ctx-ejemplo"><span class="ctx-eti">Ejemplo práctico</span><p>Agregas como fuentes la planeación de la semana y la lección del libro de texto. Después, todo lo que le preguntes o le pidas crear saldrá de esos dos materiales, con el lenguaje y los temas que ya trabajas con tu grupo.</p></div>
@@ -759,7 +783,7 @@ try{
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
-      <li><p>En el panel de <strong>Fuentes</strong> (izquierda), da clic en <span class="bn">+ Fuentes</span>. Se abre una ventana con varias opciones: <strong>Subir archivos, Sitios web, Play Libros, Drive, Libros de texto</strong> y <strong>Texto copiado</strong>.</p></li>
+      <li><p>En el panel de <strong>Fuentes</strong> (izquierda), da clic en <span class="bn">+ Fuentes</span>. Se abre una ventana con varias opciones: <strong>Subir archivos, Sitios web, Play Libros, Drive, Libros de texto</strong> y <strong>Texto copiado</strong>. Si vas a subir un archivo, revisa antes que sea de un tipo aceptado (botón <strong>«Ver qué tipos de archivo acepta»</strong>, arriba).</p></li>
       <li><p>Elige <span class="bn">Sitios web</span> y <strong>pega el enlace</strong> de la planeación (clic derecho → Pegar, o las teclas <strong>Ctrl + V</strong>).</p></li>
       <li><p>Da clic en el botón para <strong>insertar o agregar</strong> la fuente.</p></li>
       <li><p>Espera unos segundos. Funcionó si ves <strong>«Red Magisterial | Planeaciones…»</strong> en el panel de Fuentes y un <strong>resumen</strong> de la planeación en el centro.</p></li>
@@ -1517,13 +1541,52 @@ try{
     <div class="aviso tip"><span class="ico"><svg aria-hidden="true"><use href="#i-foco"/></svg></span>
       <div><strong class="t">¿Cómo copio los enlaces?</strong><p>Tu cuaderno ya está compartido desde el Tema 1, así que solo repite: <strong>tres puntos ⋮ → Compartir → Copiar enlace a artefacto</strong>. Si no lo recuerdas, regresa a la <a href="#inicio-8">Lección 8 del Tema 1</a>.</p></div></div>
     <div class="aviso bien"><span class="ico"><svg aria-hidden="true"><use href="#i-estrella"/></svg></span>
-      <div><strong class="t">¡Felicidades!</strong><p>Ya conoces las nueve funciones de Studio. En la Evidencia final aplicarás todo lo que aprendiste con una planeación tuya, de tu grado y tu materia.</p></div></div>
+      <div><strong class="t">¡Felicidades!</strong><p>Ya conoces las nueve funciones de Studio. En la Evidencia final aplicarás todo lo que aprendiste con un tema que vayas a trabajar con tu grupo y tus propias fuentes: de preferencia tu planeación, o el libro de texto, una página web confiable o un documento.</p></div></div>
   </div>
 </section>
 
 </main>
 </div>
 
+<dialog class="tipos" id="dlg-tipos" aria-labelledby="dlg-tipos-t">
+  <div class="tipos-cab"><h2 id="dlg-tipos-t">¿Qué tipos de fuentes acepta Gemini Notebook?</h2>
+    <button type="button" class="cerrar-panel" data-cierra aria-label="Cerrar">✕</button></div>
+  <div class="tipos-cuerpo">
+    <p>Antes de subir un archivo, revisa aquí si la herramienta lo puede leer. La extensión es la terminación del nombre del archivo; por ejemplo, <span class="ext">planeacion.docx</span> es un archivo de Word.</p>
+    <div class="tipos-grupo si">
+      <h3>✅ Sí acepta</h3>
+      <table class="tipos-tabla"><tbody>
+        <tr><th scope="row">Documentos de tu computadora</th><td>Word <span class="ext">.docx</span>, PDF <span class="ext">.pdf</span>, PowerPoint <span class="ext">.pptx</span>, texto <span class="ext">.txt</span>, Markdown <span class="ext">.md</span>, datos <span class="ext">.csv</span> y libros electrónicos <span class="ext">.epub</span></td></tr>
+        <tr><th scope="row">Archivos de Google</th><td>Documentos de Google, Presentaciones de Google (hasta 100 diapositivas), Hojas de cálculo de Google y otros archivos guardados en Google Drive</td></tr>
+        <tr><th scope="row">Internet</th><td>Páginas web (enlace) y videos <strong>públicos</strong> de YouTube</td></tr>
+        <tr><th scope="row">Imágenes</th><td><span class="ext">.jpg</span> <span class="ext">.jpeg</span> <span class="ext">.png</span> <span class="ext">.gif</span> <span class="ext">.webp</span> <span class="ext">.heic</span> <span class="ext">.bmp</span> <span class="ext">.tif</span> y otras. Algunas imágenes pueden leerse peor.</td></tr>
+        <tr><th scope="row">Audio</th><td><span class="ext">.mp3</span> <span class="ext">.wav</span> <span class="ext">.m4a</span> <span class="ext">.aac</span> <span class="ext">.ogg</span> <span class="ext">.wma</span> y otros. La herramienta <strong>escribe lo que se dice</strong> en el audio y usa ese texto.</td></tr>
+        <tr><th scope="row">Otras opciones</th><td>Texto que copies y pegues, tus notas, y libros de Google Play Libros y libros de texto disponibles en la opción <strong>Libros de texto</strong></td></tr>
+      </tbody></table>
+    </div>
+    <div class="tipos-grupo no">
+      <h3>❌ No acepta o no funciona bien</h3>
+      <ul class="tipos-lista">
+        <li><strong>Excel</strong> <span class="ext">.xlsx</span> y formatos antiguos de Office (<span class="ext">.doc</span>, <span class="ext">.ppt</span>, <span class="ext">.xls</span>) no aparecen en la lista oficial. <em>Solución:</em> ábrelos y guárdalos como <span class="ext">.docx</span> o <span class="ext">.pptx</span>, o súbelos a Google Drive y conviértelos a Documentos, Presentaciones u Hojas de cálculo de Google.</li>
+        <li><strong>Páginas web de pago</strong> o que piden iniciar sesión. De las páginas web solo toma el <strong>texto</strong>: no las imágenes ni los videos que contienen.</li>
+        <li><strong>Videos de YouTube privados</strong>, sin voz o sin subtítulos, y los que se subieron hace menos de 3 días. Del video solo toma lo que se dice, no lo que se ve.</li>
+        <li><strong>Audios sin voz</strong> (solo música) o de mala calidad.</li>
+        <li><strong>PDF escaneados</strong> (fotos de hojas) pueden leerse mal. Si puedes, usa la versión con texto.</li>
+        <li>De los Documentos de Google <strong>no toma las notas al pie ni los comentarios</strong>.</li>
+        <li>Archivos comprimidos (<span class="ext">.zip</span>, <span class="ext">.rar</span>) u otros formatos que no estén en la lista de arriba.</li>
+      </ul>
+    </div>
+    <div class="tipos-grupo">
+      <h3>📏 Límites</h3>
+      <ul class="tipos-lista">
+        <li>Hasta <strong>50 fuentes</strong> por cuaderno en la cuenta gratuita.</li>
+        <li>Cada fuente puede tener hasta <strong>500,000 palabras</strong> o pesar hasta <strong>200 MB</strong>.</li>
+        <li>Si cambias un archivo después de subirlo, lo que ya creaste en Studio no se actualiza solo.</li>
+      </ul>
+    </div>
+    <p class="tipos-fuente"><strong>Fuente:</strong> Ayuda de Gemini Notebook, «Agregar o descubrir fuentes nuevas para tu cuaderno», consultada en noviembre de 2026. Google puede agregar formatos nuevos con el tiempo. <a href="https://support.google.com/gemininotebook/answer/16215270?hl=es" target="_blank" rel="noopener">Ver la página oficial ↗</a></p>
+  </div>
+</dialog>
 <div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
   <img id="lightbox-img" alt="">
   <button type="button" class="btn" id="cerrar-lightbox">✕ Cerrar</button>
@@ -1763,6 +1826,18 @@ try{
   });
   document.getElementById('cerrar-lightbox').addEventListener('click',cerrarLightbox);
   lb.addEventListener('click',function(e){ if(e.target===lb) cerrarLightbox(); });
+
+  // Ventanas emergentes (tipos de archivo)
+  document.querySelectorAll('[data-abre]').forEach(function(b){
+    var d=document.getElementById(b.getAttribute('data-abre')); if(!d) return;
+    b.addEventListener('click',function(){
+      if(d.showModal){ d.showModal(); } else { d.setAttribute('open',''); }
+      var c=d.querySelector('[data-cierra]'); if(c) c.focus();
+    });
+    d.addEventListener('close',function(){ b.focus(); });
+    d.addEventListener('click',function(e){ if(e.target===d) d.close(); });
+    d.querySelectorAll('[data-cierra]').forEach(function(c){ c.addEventListener('click',function(){ if(d.close) d.close(); else d.removeAttribute('open'); }); });
+  });
 
   // Material extra: el video se carga al abrir el recuadro y se detiene al cerrarlo
   document.querySelectorAll('details.extra').forEach(function(d){
