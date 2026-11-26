@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- Curso Gemini Notebook para docentes de primaria · Versión final (14) · noviembre de 2026 -->
+<!-- Curso Gemini Notebook para docentes de primaria · Versión final (17) · noviembre de 2026 -->
 <html lang="es">
 <head>
 <meta charset="UTF-8">
@@ -190,6 +190,16 @@ html.contraste .aviso .ico{background:#FFE600!important;color:#000}
 html.contraste .btn{background:#FFE600;color:#000;border-color:#FFE600}
 html.contraste .btn.sec{background:#000;color:#FFE600}
 .btn svg{width:22px;height:22px;flex:0 0 auto}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.resultado{margin:1rem 0 .4rem;padding:1rem 1.1rem;border-radius:16px;background:var(--fondo);border:2px solid var(--borde);border-left:6px solid var(--azul)}
+.resultado .t{display:block;font-family:var(--titulos);font-size:1.05em;margin-bottom:.3rem}
+.resultado p{margin:0 0 .7rem}
+.btn-resultado{display:inline-flex;align-items:center;gap:.4rem;min-height:48px;padding:.5rem 1rem;border-radius:12px;background:var(--azul);color:#fff;font-weight:700;text-decoration:none}
+.btn-resultado:hover{background:var(--azul-osc)}
+html.contraste .btn-resultado{color:#000}
+.dos-formas{margin:.3rem 0 .6rem;padding-left:1.2rem}
+.dos-formas li{margin:.4rem 0}
+.dos-formas a{font-weight:700;word-break:break-all}
 .estado-copia{font-weight:700;color:var(--verde);min-height:1.4em;margin:.3rem 0 0}
 
 .paneles{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:.8rem}
@@ -672,7 +682,16 @@ try{
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
-      <li><p>Abre la página con el botón <span class="bn">Abrir Gemini Notebook</span> de arriba. Se abre en una pestaña nueva, así no pierdes esta guía.</p></li>
+      <li><p>Abre Gemini Notebook. Puedes hacerlo de <strong>dos formas</strong>:</p>
+        <ul class="dos-formas">
+          <li><strong>Entra directo:</strong> da clic en este enlace <a href="https://notebook.google.com/" target="_blank" rel="noopener">https://notebook.google.com/ <span aria-hidden="true">↗</span><span class="sr">(se abre en una pestaña nueva)</span></a> o en el botón <span class="bn">Abrir Gemini Notebook</span> de arriba. Se abre en una pestaña nueva, así no pierdes esta guía.</li>
+          <li><strong>Copia el enlace:</strong> da clic en <span class="bn">Copiar enlace</span>, abre una pestaña nueva, pégalo en la barra de direcciones (clic derecho → Pegar, o <strong>Ctrl + V</strong>) y presiona <strong>Enter</strong>.</li>
+        </ul>
+        <div class="copiar">
+          <code id="enlace-notebook">https://notebook.google.com/</code>
+          <button type="button" class="btn" data-copiar="enlace-notebook" data-msg="✓ Enlace copiado. Ahora pégalo en la barra de direcciones de una pestaña nueva y presiona Enter."><svg aria-hidden="true"><use href="#i-copiar"/></svg>Copiar enlace</button>
+        </div>
+        <p class="estado-copia" role="status" aria-live="polite"></p></li>
       <li>
         <p>Da clic en <span class="bn">Accede a Gemini Notebook</span>. También sirve el botón <span class="bn">Acceder</span> de arriba a la derecha: los dos hacen lo mismo.</p>
         <figure>
@@ -778,7 +797,7 @@ try{
     <p class="estado-copia" role="status" aria-live="polite"></p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="S6QOUvQ69IY" data-titulo="Video: cómo agregar y buscar fuentes en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=S6QOUvQ69IY" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="QyZDKLpcT0E" data-titulo="Video: cómo agregar y buscar fuentes en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=QyZDKLpcT0E" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
@@ -882,8 +901,13 @@ try{
 
   <div class="tarjeta">
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
-    <div class="video" data-yt="P3YkLeBW8Wg" data-titulo="Video: cómo crear un informe en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=P3YkLeBW8Wg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
+    <div class="video" data-yt="d1W9CKs_FSY" data-titulo="Video: cómo crear un informe en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=d1W9CKs_FSY" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Este es el informe que generamos en el video, a partir de la planeación de práctica. Ábrelo y explóralo antes de crear el tuyo.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/draUQoJXaVfO" target="_blank" rel="noopener">Ver el informe que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -933,6 +957,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="L5ddZ12udh0" data-titulo="Video: cómo crear un mapa mental en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=L5ddZ12udh0" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Este es el mapa mental que generamos en el video, a partir de la planeación de práctica. Ábrelo y explóralo antes de crear el tuyo.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/rxPrtAden0rx" target="_blank" rel="noopener">Ver el mapa mental que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -970,6 +999,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="q36eMiQ5QPg" data-titulo="Video: cómo crear una tabla de datos en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=q36eMiQ5QPg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Esta es la tabla de datos que generamos en el video, a partir de la planeación de práctica. Ábrela y explórala antes de crear la tuya.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/RdmcJoh1e6Cy" target="_blank" rel="noopener">Ver la tabla de datos que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1157,6 +1191,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="qQ2tInHkkwU" data-titulo="Video: cómo crear tarjetas didácticas en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=qQ2tInHkkwU" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Estas son las tarjetas didácticas que generamos en el video, a partir de la planeación de práctica. Ábrelas y explóralas antes de crear las tuyas.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/J1MTlRXoUZm8" target="_blank" rel="noopener">Ver las tarjetas que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1200,6 +1239,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="KsO-R1FurlQ" data-titulo="Video: cómo crear un cuestionario en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=KsO-R1FurlQ" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Este es el cuestionario que generamos en el video, a partir de la planeación de práctica. Ábrelo y explóralo antes de crear el tuyo.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/XVFAzhNVz8aJ" target="_blank" rel="noopener">Ver el cuestionario que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1251,6 +1295,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="35mQpZOnm8k" data-titulo="Video: cómo crear una infografía en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=35mQpZOnm8k" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Esta es la infografía que generamos en el video, a partir de la planeación de práctica. Ábrela y explórala antes de crear la tuya.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/UKAQLxiS613u" target="_blank" rel="noopener">Ver la infografía que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1292,6 +1341,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="XsTZ6Q9fDes" data-titulo="Video: cómo crear una presentación en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=XsTZ6Q9fDes" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Esta es la presentación que generamos en el video, a partir de la planeación de práctica. Ábrela y explórala antes de crear la tuya.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/PkKxRGgHPLvo" target="_blank" rel="noopener">Ver la presentación que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1430,6 +1484,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="QZD8t8xYzYg" data-titulo="Video: cómo crear un resumen en audio en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=QZD8t8xYzYg" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Este es el resumen en audio que generamos en el video, a partir de la planeación de práctica. Escúchalo antes de crear el tuyo.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/dgWpC70lSNwF" target="_blank" rel="noopener">Escuchar el audio que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1482,6 +1541,11 @@ try{
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-play"/></svg></span>Mira el video</h3>
     <div class="video" data-yt="e2MLjtEnc_E" data-titulo="Video: cómo crear un resumen en video en Gemini Notebook"><a class="video-alt" href="https://www.youtube.com/watch?v=e2MLjtEnc_E" target="_blank" rel="noopener">Ver el video en YouTube ↗</a></div>
     <p class="nota-video">Si el video no se ve, sigue los pasos escritos o <a class="enlace-yt" href="#">ábrelo en YouTube</a>.</p>
+    <div class="resultado">
+      <strong class="t">Mira el resultado real</strong>
+      <p>Este es el resumen en video que generamos en esta lección, a partir de la planeación de práctica. Míralo antes de crear el tuyo.</p>
+      <a class="btn-resultado" href="https://notebooklm.link.google/dHS9oWcSErbr" target="_blank" rel="noopener">Ver el video que generamos <span aria-hidden="true">↗</span><span class="sr"> (se abre en una pestaña nueva)</span></a>
+    </div>
 
     <h3><span class="ico"><svg aria-hidden="true"><use href="#i-pasos"/></svg></span>Paso a paso</h3>
     <ol class="pasos">
@@ -1806,8 +1870,9 @@ try{
   document.querySelectorAll('[data-copiar]').forEach(function(btn){
     btn.addEventListener('click',function(){
       var texto=document.getElementById(btn.dataset.copiar).textContent.trim();
-      var estado=btn.closest('.tarjeta').querySelector('.estado-copia');
-      function ok(){ estado.textContent='✓ Enlace copiado. Ahora pégalo en Gemini Notebook.'; }
+      var sig=btn.parentElement.nextElementSibling;
+      var estado=(sig&&sig.classList.contains('estado-copia'))?sig:btn.closest('.tarjeta').querySelector('.estado-copia');
+      function ok(){ estado.textContent=btn.dataset.msg||'✓ Enlace copiado. Ahora pégalo en Gemini Notebook.'; }
       function falla(){ estado.textContent='No se pudo copiar solo. Selecciona el enlace con el mouse y cópialo con Ctrl + C.'; }
       function viejo(){ try{var t=document.createElement('textarea'); t.value=texto; t.style.position='fixed'; t.style.opacity='0'; document.body.appendChild(t); t.select(); var r=document.execCommand('copy'); document.body.removeChild(t); return r;}catch(e){return false;} }
       if(navigator.clipboard&&navigator.clipboard.writeText){ navigator.clipboard.writeText(texto).then(ok,function(){ viejo()?ok():falla(); }); }
